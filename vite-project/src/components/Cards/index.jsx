@@ -1,13 +1,13 @@
-import {Calendar} from "../Calendar/Cards" 
+import {Calendar} from "../Calendar" 
 
-export const Cards = ({card_theme}) => {
+export const Cards = ({cardTheme}) => {
     return (
         <div className="cards">
         <div className="cards__item">
         <div className="cards__card card">
             <div className="card__group">
                 <div className="card__theme _green">
-                    <p className="_green">{card_theme}</p>
+                    <p className="_green">{cardTheme}</p>
                 </div>
                 <a href="#popBrowse" target="_self">
                     <div className="card__btn">

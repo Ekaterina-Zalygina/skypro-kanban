@@ -1,4 +1,4 @@
-import { Cards } from "../Cards/Column"
+import { Cards } from "../Cards"
 
 export const Column = ({title}) => {
     return (
@@ -7,11 +7,11 @@ export const Column = ({title}) => {
             <p>{title}</p>
         </div>
 
-        <Cards cards_theme="Web Design"/>
-        <Cards cards_theme="Research"/>
-        {/* <Cards cards_theme="Web Design"/> */}
-        <Cards cards_theme="Copywriting"/>
-        {/* <Cards cards_theme="Research"/> */}
+        <Cards cardTheme="Web Design"/>
+        <Cards cardTheme="Research"/>
+        <Cards cardTheme="Web Design"/>
+        <Cards cardTheme="Copywriting"/>
+        <Cards cardTheme="Research"/>
 
         {/* <div class="cards">
             <div class="cards__item">
