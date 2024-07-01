@@ -1,4 +1,12 @@
-export const Header = () => {
+import { useState } from "react"
+
+export const Header = ({addCards}) => {
+
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleOpenUser = () => {
+        setIsOpen(!isOpen)
+    }
+
     return (
         <header className="header">
         <div className="container">
@@ -10,10 +18,12 @@ export const Header = () => {
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
                 </div>
                 <nav className="header__nav">
-                    <button className="header__btn-main-new _hover01" id="btnMainNew"><a href="#popNewCard">Создать новую задачу</a></button>
-                    <a href="#user-set-target" className="header__user _hover02">Ivan Ivanov</a>
-                    <div className="header__pop-user-set pop-user-set" id="user-set-target">
-                        {/*<a href="">x</a>*/}
+                    <button onClick={addCards} className="header__btn-main-new _hover01" id="btnMainNew"><a>Создать новую задачу</a></button>
+                    <a className="header__user _hover02" onClick={toggleOpenUser}>Ivan Ivanov</a>
+
+                    {/* модальное окно */}
+                    {isOpen && (
+                        <div className="header__pop-user-set pop-user-set" id="user-set-target">
                         <p className="pop-user-set__name">Ivan Ivanov</p>
                         <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
                         <div className="pop-user-set__theme">
@@ -22,6 +32,8 @@ export const Header = () => {
                         </div>
                         <button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
                     </div>
+                    )}
+
                 </nav>					
             </div>
         </div>			
