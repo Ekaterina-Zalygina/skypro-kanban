@@ -4,6 +4,7 @@ import { Header } from "./components/Header"
 import { Main } from "./components/Main"
 import { tasks } from '../data'
 import loader from "/images/loader.jpg"
+import { GlobalStyle } from './globalStyle.styled.js'
 
 function App() {
 
@@ -31,10 +32,14 @@ function App() {
     }, [])
 
   return (
-    <div className="wrapper">
-      <Header addCards={addCards}/>
-      {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
-    </div>
+    <>
+    <GlobalStyle/>
+        <div className="wrapper">
+       <Header addCards={addCards}/>
+       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
+       </div>
+    </>
+
   )
 }
 
