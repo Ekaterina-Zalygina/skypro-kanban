@@ -58,7 +58,7 @@ export const Card = ({topic, title, date}) => {
                   </clipPath>
                 </defs>
               </div>
-              <p>{date}</p>
+              <p class="card_date_i">{date}</p>
             </div>
           </div>
         </div>
