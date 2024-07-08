@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { Header } from "./components/Header"
+import { PopUser } from "./components/PopUser"
+import { PopNewCard } from "./components/PopNewCard"
+import { PopBrowse } from "./components/PopBrowse"
 import { Main } from "./components/Main"
 import { tasks } from '../data'
 import loader from "/images/loader.jpg"
-import { GlobalStyle } from './globalStyle.styled.js'
+import { GlobalStyle, Wrapper } from './globalStyle.styled.js'
 
 function App() {
 
@@ -34,10 +37,13 @@ function App() {
   return (
     <>
     <GlobalStyle/>
-        <div className="wrapper">
-       <Header addCards={addCards}/>
-       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
-       </div>
+      <Wrapper>
+          <PopNewCard/>
+          <PopBrowse />
+          <PopUser /> 
+          <Header addCards={addCards}/>
+          {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
+      </Wrapper>
     </>
 
   )

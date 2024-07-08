@@ -1,3 +1,5 @@
+import { CardGroup, Cards, CardsCard, CardsItem } from "./cards.styled.js";
+
 export const Card = ({topic, title, date}) => {
 
     const colorList = {
@@ -10,13 +12,13 @@ export const Card = ({topic, title, date}) => {
     const colorStyle = colorList[topic] || "_grey"
 
     return (
-        <div className="cards">
-        <div className="cards__item">
-        <div className="cards__card card">
-            <div className="card__group">
-            <div className={`card__theme ${colorStyle[topic]}`}>
+        <Cards>
+        <CardsItem>
+        <CardsCard>
+            <CardGroup>
+            <CardTheme '${colorStyle[topic]}'>
                     <p className={`${colorStyle}`}>{topic}</p>
-                </div>
+                </CardGroup>
                 <a href="#popBrowse" target="_self">
                     <div className="card__btn">
                         <div></div>
@@ -24,7 +26,7 @@ export const Card = ({topic, title, date}) => {
                         <div></div>
                     </div>
                 </a>
-            </div>
+            </CardsCard>
             <div className="card__content">
                 <a href="" target="_blank">
                     <h3 className="card__title">{title}</h3>
@@ -58,10 +60,10 @@ export const Card = ({topic, title, date}) => {
                   </clipPath>
                 </defs>
               </div>
-              <p class="card_date_i">{date}</p>
+              <p className="card_date_i">{date}</p>
             </div>
           </div>
-        </div>
-      </div>
+        </CardsItem>
+      </Cards>
     );
 }
