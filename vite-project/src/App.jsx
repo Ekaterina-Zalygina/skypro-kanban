@@ -4,6 +4,10 @@ import { Header } from "./components/Header"
 import { Main } from "./components/Main"
 import { tasks } from '../data'
 import loader from "/images/loader.jpg"
+import { GlobalStyle, Wrapper } from './globalStyle.styled'
+import { PopUser } from "./components/PopUser"
+// import { popNewCard } from "./components/PopNewCard"
+import { PopBrowse } from "./components/PopBrowse"
 
 function App() {
 
@@ -31,10 +35,17 @@ function App() {
     }, [])
 
   return (
-    <div className="wrapper">
+    <>
+    <GlobalStyle/>
+      <Wrapper>
+          {/* <popNewCard/> */}
+          <PopBrowse />
+          <PopUser /> 
       <Header addCards={addCards}/>
       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
-    </div>
+    </Wrapper>
+    </>
+
   )
 }
 

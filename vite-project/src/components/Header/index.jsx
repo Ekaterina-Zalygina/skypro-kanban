@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Container } from "../../globalStyle.styled"
+import * as S from "./header.styled.js"
 
 export const Header = ({addCards}) => {
 
@@ -8,35 +10,35 @@ export const Header = ({addCards}) => {
     }
 
     return (
-        <header className="header">
-        <div className="container">
-            <div className="header__block">
-                <div className="header__logo _show _light">
+        <S.Header>
+        <Container>
+            <S.HeaderBlock>
+                <S.HeaderLogo className="_show _light">
                     <a href="" target="_self"><img src="images/logo.png" alt="logo"/></a>
-                </div>
-                <div className="header__logo _dark">
+                </S.HeaderLogo>
+                <S.HeaderLogo className="_dark">
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
-                </div>
-                <nav className="header__nav">
+                </S.HeaderLogo>
+                <S.HeaderNav>
                     <button onClick={addCards} className="header__btn-main-new _hover01" id="btnMainNew"><a>Создать новую задачу</a></button>
                     <a className="header__user _hover02" onClick={toggleOpenUser}>Ivan Ivanov</a>
 
                     {/* модальное окно */}
                     {isOpen && (
-                        <div className="header__pop-user-set pop-user-set" id="user-set-target">
-                        <p className="pop-user-set__name">Ivan Ivanov</p>
-                        <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-                        <div className="pop-user-set__theme">
+                        <S.HeaderPopUserSet id="user-set-target">
+                        <S.HeaderPopUserSet>Ivan Ivanov</S.HeaderPopUserSet>
+                        <S.PopUserSetEmail>ivan.ivanov@gmail.com</S.PopUserSetEmail>
+                        <S.PopUserSetTheme>
                             <p>Темная тема</p>
-                            <input type="checkbox" className="checkbox" name="checkbox"/>
-                        </div>
+                            <S.PopUserThemeCheckbox type="checkbox" name="checkbox"/>
+                        </S.PopUserSetTheme>
                         <button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
-                    </div>
+                    </S.HeaderPopUserSet>
                     )}
 
-                </nav>					
-            </div>
-        </div>			
-    </header>
+                </S.HeaderNav>					
+            </S.HeaderBlock>
+        </Container>			
+    </S.Header>
     )
 }

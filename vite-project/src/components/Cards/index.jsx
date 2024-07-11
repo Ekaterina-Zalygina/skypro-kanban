@@ -1,3 +1,5 @@
+import * as S from "./cards.styled.js"
+
 export const Card = ({topic, title, date}) => {
 
     const colorList = {
@@ -10,26 +12,26 @@ export const Card = ({topic, title, date}) => {
     const colorStyle = colorList[topic] || "_grey"
 
     return (
-        <div className="cards">
-        <div className="cards__item">
-        <div className="cards__card card">
-            <div className="card__group">
-            <div className={`card__theme ${colorList[topic]}`}>
-                    <p className={`${colorStyle}`}>{topic}</p>
+      <S.Cards>
+        <S.CardsItem>
+         <S.CardCards>
+            <S.CardGroup>
+              <div className={`card__theme ${colorList[topic]}`}>
+                  <p className={`${colorStyle}`}>{topic}</p>
                 </div>
                 <a href="#popBrowse" target="_self">
-                    <div className="card__btn">
+                    <S.CardBtn>
                         <div></div>
                         <div></div>
                         <div></div>
-                    </div>
+                    </S.CardBtn>
                 </a>
-            </div>
-            <div className="card__content">
+            </S.CardGroup>
+            <S.CardContent>
                 <a href="" target="_blank">
-                    <h3 className="card__title">{title}</h3>
+                    <S.CardTitle>{title}</S.CardTitle>
                 </a>
-                <div className="card__date">
+                <S.CardDate>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="13"
@@ -57,11 +59,12 @@ export const Card = ({topic, title, date}) => {
                     <rect width="13" height="13" fill="white" />
                   </clipPath>
                 </defs>
-              </div>
-              <p className="card_date_i">{date}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+              </S.CardDate>
+              <S.CardDateI>{date}</S.CardDateI>
+            </S.CardContent>
+          </S.CardCards>
+        </S.CardsItem>
+      </S.Cards>
+      
     );
 }

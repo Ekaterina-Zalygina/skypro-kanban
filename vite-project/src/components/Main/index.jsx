@@ -1,11 +1,12 @@
 import { Column } from "../Column";
 import { statusList } from "../../../data.js";
+import { Container } from "../../globalStyle.styled.js";
 
 export const Main = ({cards}) => {
 
     return (
         <main className="main">
-        <div className="container">
+        <Container>
 
             <div className="main__content">
                 {statusList.map((status, i) => (
@@ -27,7 +28,7 @@ export const Main = ({cards}) => {
                     <Column title="Готово"/>
                 </div>
             </div> */}
-        </div>
+        </Container>
         </main>
     )
 }
