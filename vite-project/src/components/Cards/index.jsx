@@ -9,16 +9,16 @@ export const Card = ({topic, title, date}) => {
 
     }
     
-    const colorStyle = colorList[topic] || "_grey"
+    // const colorStyle = colorList[topic] || "_grey"
 
     return (
       <S.Cards>
         <S.CardsItem>
          <S.CardCards>
             <S.CardGroup>
-              <div className={`card__theme ${colorList[topic]}`}>
-                  <p className={`${colorStyle}`}>{topic}</p>
-                </div>
+              <S.CardTheme className={`${colorList[topic]}`}>
+                  <p>{topic}</p>
+                </S.CardTheme>
                 <a href="#popBrowse" target="_self">
                     <S.CardBtn>
                         <div></div>

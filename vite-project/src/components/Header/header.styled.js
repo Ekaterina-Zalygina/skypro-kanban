@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Hover01 } from "../../globalStyle.styled";
+import { Hover01, Hover02, Hover03 } from "../../globalStyle.styled";
 
 export const Header = styled.header`
   width: 100%;
@@ -46,6 +46,32 @@ export const HeaderBtnMain = styled.button`
   ${Hover01}
 `
 
+export const HeaderUserHover02 = styled.a`
+  height: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #565EEF;
+
+  &:after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  border-left: 1.9px solid #565EEF;
+  border-bottom: 1.9px solid #565EEF;
+  transform: rotate(-45deg);
+  margin: -6px 0 0 5px;
+  padding: 0;
+}
+
+${Hover02}
+`
+
 export const HeaderPopUserSet = styled.div`
   display: block;
   position: absolute;
@@ -67,9 +93,22 @@ export const HeaderPopUserSet = styled.div`
 .pop-browse:target {
   display: block;
 }
+
+button {
+  width: 72px;
+  height: 30px;
+  background: transparent;
+  color: #565EEF;
+  border-radius: 4px;
+  border: 1px solid #565EEF;
+}
+
+a {
+  color: #565EEF;
+}
 `
 
-export const PopUserSetName = styled.p`
+export const HeaderPopUserSetName = styled.p`
   color: #000;
   font-size: 14px;
   font-weight: 500;
@@ -98,9 +137,8 @@ export const PopUserSetTheme = styled.div`
   line-height: 21px;
   letter-spacing: -0.14px;
 }
-`
 
-export const PopUserThemeCheckbox = styled.input`
+input[type=checkbox] {
   position: relative;
   width: 24px;
   height: 13px;
@@ -108,17 +146,11 @@ export const PopUserThemeCheckbox = styled.input`
   background: #EAEEF6;
   outline: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
 
-  p {
-  color: #000;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.14px;
- } 
-
- &::before {
+input[type=checkbox]::before {
   content: "";
   position: absolute;
   top: 1px;
@@ -128,8 +160,12 @@ export const PopUserThemeCheckbox = styled.input`
   border-radius: 50%;
   background-color: #94A6BE;
   transition: 0.5s;
- }
- &:checked::before {
-  left: 12px;
 }
+
+input:checked[type=checkbox]::before {
+  left: 12px;
+} 
+`
+export const HeaderExit = styled.button`
+${Hover03}
 `

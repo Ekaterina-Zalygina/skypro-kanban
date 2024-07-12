@@ -20,19 +20,19 @@ export const Header = ({addCards}) => {
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
                 </S.HeaderLogo>
                 <S.HeaderNav>
-                    <button onClick={addCards} className="header__btn-main-new _hover01" id="btnMainNew"><a>Создать новую задачу</a></button>
-                    <a className="header__user _hover02" onClick={toggleOpenUser}>Ivan Ivanov</a>
+                    <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
+                    <S.HeaderUserHover02 onClick={toggleOpenUser}>Ivan Ivanov</S.HeaderUserHover02>
 
                     {/* модальное окно */}
                     {isOpen && (
                         <S.HeaderPopUserSet id="user-set-target">
-                        <S.HeaderPopUserSet>Ivan Ivanov</S.HeaderPopUserSet>
+                        <S.HeaderPopUserSetName>Ivan Ivanov</S.HeaderPopUserSetName>
                         <S.PopUserSetEmail>ivan.ivanov@gmail.com</S.PopUserSetEmail>
                         <S.PopUserSetTheme>
                             <p>Темная тема</p>
-                            <S.PopUserThemeCheckbox type="checkbox" name="checkbox"/>
+                            <input type="checkbox" className="checkbox" name="checkbox"/>
                         </S.PopUserSetTheme>
-                        <button type="button" className="_hover03"><a href="#popExit">Выйти</a></button>
+                        <S.HeaderExit type="button" ><a href="#popExit">Выйти</a></S.HeaderExit>
                     </S.HeaderPopUserSet>
                     )}
 
