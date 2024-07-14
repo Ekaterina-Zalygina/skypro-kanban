@@ -16,7 +16,7 @@ export const Card = ({topic, title, date}) => {
         <S.CardsItem>
          <S.CardCards>
             <S.CardGroup>
-              <S.CardTheme className={`${colorList[topic]}`}>
+              <S.CardTheme $color={topic}>
                   <p>{topic}</p>
                 </S.CardTheme>
                 <a href="#popBrowse" target="_self">

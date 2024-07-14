@@ -53,18 +53,18 @@ export const Container = styled.div`
 `
 
 export const Orange = css`
-  background-color: #FFE4C2;
-  color: #FF6D00;
+  background-color: ${({theme}) => theme.orangeTheme};
+  color: ${({theme}) => theme.orangeText};
 `
 
 export const Green = css`
-  background-color: #B4FDD1;
-  color: #06B16E;
+  background-color: ${({theme}) => theme.greenTheme};
+  color: ${({theme}) => theme.greenText};
 `
 
 export const Purple = css`
-  background-color: #E9D4FF;
-  color: #9A48F1;
+  background-color: ${({theme}) => theme.purpleTheme};
+  color: ${({theme}) => theme.purpleText};
 `
 
 export const Gray = css`

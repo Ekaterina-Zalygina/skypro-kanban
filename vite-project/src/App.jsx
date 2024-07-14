@@ -8,11 +8,15 @@ import { GlobalStyle, Wrapper } from './globalStyle.styled'
 import { PopUser } from "./components/PopUser"
 // import { popNewCard } from "./components/PopNewCard"
 import { PopBrowse } from "./components/PopBrowse"
+import { ThemeProvider } from 'styled-components'
+import { dark, light } from './theme'
 
 function App() {
 
   const [cards, setCards] = useState(tasks)
   const [isLoading, setIsLoading] = useState(false)
+
+  const [intoTheme, setIntoTheme] = useState("light")
 
     const addCards = () => {
 
@@ -36,16 +40,17 @@ function App() {
 
   return (
     <>
+    <ThemeProvider theme={intoTheme === "light" ? light : dark}>
     <GlobalStyle/>
       <Wrapper>
           {/* <popNewCard/> */}
           <PopBrowse />
           <PopUser /> 
-      <Header addCards={addCards}/>
+      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
     </Wrapper>
+    </ThemeProvider>
     </>
-
   )
 }
 
