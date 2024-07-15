@@ -1,4 +1,4 @@
-import { ContainerSignup, ModalBlockRegister, ModalRegister, ModalTtlRegister, WrapperRegister } from "./register.styled"
+import { ContainerSignup, ModalBlockRegister, ModalBtnRegister, ModalFormGroupRegister, ModalFormLogin, ModalInputRegister, ModalRegister, ModalTtlRegister, WrapperRegister } from "./register.styled"
 
 export const Register = () => {
     return(
@@ -9,15 +9,15 @@ export const Register = () => {
 					<ModalTtlRegister>
 						<h2>Регистрация</h2>
 					</ModalTtlRegister>
-					<form className="modal__form-login" id="formLogUp" action="#">
-						<input className="modal__input first-name" type="text" name="first-name" id="first-name" placeholder="Имя" />
-						<input className="modal__input login" type="text" name="login" id="loginReg" placeholder="Эл. почта" />
-						<input className="modal__input password-first" type="password" name="password" id="passwordFirst" placeholder="Пароль" />
-						<button className="modal__btn-signup-ent _hover01" id="SignUpEnter"><a href="../main.html">Зарегистрироваться</a> </button>
-						<div className="modal__form-group">
+					<ModalFormLogin id="formLogUp" action="#">
+						<ModalInputRegister type="text" name="first-name" id="first-name" placeholder="Имя" />
+						<ModalInputRegister type="text" name="login" id="loginReg" placeholder="Эл. почта" />
+						<ModalInputRegister type="password" name="password" id="passwordFirst" placeholder="Пароль" />
+						<ModalBtnRegister id="SignUpEnter"><a href="../main.html">Зарегистрироваться</a> </ModalBtnRegister>
+						<ModalFormGroupRegister>
 							<p>Уже есть аккаунт?  <a href="signin.html">Войдите здесь</a></p>
-						</div>
-					</form>
+						</ModalFormGroupRegister>
+					</ModalFormLogin>
 				</ModalBlockRegister>
 			</ModalRegister>
         </ContainerSignup>
