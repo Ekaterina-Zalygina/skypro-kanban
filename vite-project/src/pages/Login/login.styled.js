@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
-export const WrapperRegister = styled.div`
-  width: 100%;
+export const WrapperLogin = styled.div`
+ width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: ${({theme}) => theme.bodyRegister};
+  background-color: ${({theme}) => theme.bodyLogin};
 `
 
-export const ContainerSignup = styled.div`
-  display: block;
+export const ContainerSignin = styled.div`
+ display: block;
   width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
 `
 
-export const ModalRegister = styled.div`
- width: 100%;
+export const ModalLogin = styled.div`
+  width: 100%;
   height: 100%;
   min-width: 320px;
   min-height: 100vh;
@@ -26,7 +26,7 @@ export const ModalRegister = styled.div`
   justify-content: center;
 `
 
-export const ModalBlockRegister = styled.div`
+export const ModalBlockLogin = styled.div`
  display: block;
   margin: 0 auto;
   background-color: #FFFFFF;
@@ -36,16 +36,15 @@ export const ModalBlockRegister = styled.div`
   border-radius: 10px;
   border: 0.7px solid #D4DBE5;
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.13);
-
 `
 
-export const ModalTtlRegister = styled.div`
+export const ModalTtlLogin = styled.div`
  text-align: center;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
   letter-spacing: -0.6px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 `
 
 export const ModalFormLogin = styled.form`
@@ -53,14 +52,15 @@ export const ModalFormLogin = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
-  
-  input:not(:last-child) {
+  justify-content: center;
+
+  input:first-child {
   margin-bottom: 7px;
 }
 `
-export const ModalInputRegister = styled.input`
- width: 100%;
+
+export const ModalInputLogin = styled.input`
+  width: 100%;
   min-width: 100%;
   border-radius: 8px;
   border: 0.7px solid rgba(148, 166, 190, 0.4);
@@ -86,7 +86,7 @@ export const ModalInputRegister = styled.input`
 }
 `
 
-export const ModalBtnRegister = styled.button`
+export const ModalBtnEnterLogin = styled.button`
  width: 100%;
   height: 30px;
   background-color: #565EEF;
@@ -118,7 +118,7 @@ hover01:hover {
 }
 `
 
-export const ModalFormGroupRegister = styled.div`
+export const ModalFormGroupLogin = styled.div`
  text-align: center;
 
  & p,
@@ -134,4 +134,3 @@ a {
   text-decoration: underline;
 }
 `
-

@@ -11,7 +11,9 @@ purpleTheme: "#E9D4FF",
 orangeText: "#FF6D00",
 greenText: "#06B16E",
 purpleText: "#9A48F1",
+bodyRegister: "#EAEEF6",
 wrapperRegister: "#EAEEF6",
+bodyLogin: "#EAEEF6"
 
 }
 
@@ -28,5 +30,7 @@ purpleTheme: "#9A48F1",
 orangeText: "#FFE4C2",
 greenText: "#B4FDD1",
 purpleText: "#E9D4FF",
+bodyRegister: "#FFFFFF",
 wrapperRegister: "#151419",
+bodyLogin: "#FFFFFF"
 }
