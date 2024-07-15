@@ -10,7 +10,7 @@ export const AppRoutes = ({intoTheme, setIntoTheme}) => {
         <BrowserRouter>
             <Routes>  
                 <Route path={routes.main} element={<MainPage setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>}/>
-                <Route path={routes.notFound} element={<NotFound/>}/>
+                <Route path={routes.notFound} element={<NotFound />}/>
                 <Route path={routes.register} element={<Register/>}/>
                 <Route path={routes.login} element={<LoginPage/>}/>
             </Routes>
