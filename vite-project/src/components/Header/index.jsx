@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Container } from "../../globalStyle.styled"
 import * as S from "./header.styled.js"
+import { Link } from "react-router-dom"
 
 export const Header = ({addCards, intoTheme, setIntoTheme}) => {
 
