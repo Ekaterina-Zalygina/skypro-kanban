@@ -4,7 +4,8 @@ import { routes } from "../../router/routes.js"
 
 export const LoginPage = ({setIsAuth}) => {
 	const Navigation = useNavigate()
-	const handleLogin = () => {
+	const handleLogin = (e) => {
+		e.preventDefault()
 		setIsAuth(true)
 		Navigation(routes.main)
 	}
@@ -19,7 +20,7 @@ export const LoginPage = ({setIsAuth}) => {
 					<ModalFormLogin id="formLogIn" action="#">
 						<ModalInputLogin type="text" name="login" id="formlogin" placeholder="Эл. почта" />
 						<ModalInputLogin type="password" name="password" id="formpassword" placeholder="Пароль" />
-						<ModalBtnEnterLogin id="btnEnter"><a onClick={handleLogin}>Войти</a></ModalBtnEnterLogin>
+						<ModalBtnEnterLogin onClick={handleLogin} id="btnEnter"><a>Войти</a></ModalBtnEnterLogin>
 						<ModalFormGroupLogin>
 							<p>Нужно зарегистрироваться?</p>
 							<Link to={routes.register}>Регистрируйтесь здесь</Link>
