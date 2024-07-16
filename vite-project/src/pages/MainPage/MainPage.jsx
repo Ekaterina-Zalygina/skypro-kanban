@@ -6,6 +6,7 @@ import { PopUser } from "../../components/PopUser"
 import { Wrapper } from "../../globalStyle.styled"
 import { tasks } from "../../../data"
 import loader from "/images/loader.jpg"
+import { Outlet } from "react-router-dom"
 
 export const MainPage = ({intoTheme, setIntoTheme}) => {
 
@@ -34,9 +35,10 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
 
     return (
         <Wrapper>
+          <Outlet/>
           <popNewCard/>
           <PopBrowse />
-          <PopUser /> 
+          {/* <PopUser />  */}
       <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
     </Wrapper>
