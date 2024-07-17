@@ -1,7 +1,6 @@
-import { Outlet } from "react-router-dom"
-import { LoginPage } from "../pages/Login/LoginPage.jsx"
+import { Navigate, Outlet } from "react-router-dom"
+import { routes } from "./routes.js"
 
-export const ProtectedRoute = () => {
-    let isAuth = false
-    return isAuth ? <Outlet/> : <LoginPage/>
+export const ProtectedRoute = ({isAuth}) => {
+    return isAuth ? <Outlet/> : <Navigate to={routes.login}/>
 }
