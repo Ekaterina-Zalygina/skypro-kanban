@@ -13,7 +13,6 @@ export const AppRoutes = ({intoTheme, setIntoTheme}) => {
     const [isAuth, setIsAuth] = useState(false)
     return (
         <BrowserRouter>
-
             <Routes> 
              <Route element={<ProtectedRoute isAuth={isAuth}/>}>
                 <Route path={routes.main} element={<MainPage setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>}/>

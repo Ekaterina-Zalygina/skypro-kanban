@@ -4,7 +4,7 @@ import * as S from "./header.styled.js"
 import { Link } from "react-router-dom"
 import { routes } from "../../router/routes.js"
 
-export const Header = ({addCards, intoTheme, setIntoTheme, isAuth}) => {
+export const Header = ({addCards, intoTheme, setIntoTheme}) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpenUser = () => {

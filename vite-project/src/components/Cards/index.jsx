@@ -3,12 +3,12 @@ import * as S from "./cards.styled.js"
 
 export const Card = ({topic, title, date, id}) => {
 
-    const colorList = {
-        "Web Design":"_orange",
-        "Copywriting":"_purple",
-        "Research":"_green"
+    // const colorList = {
+    //     "Web Design":"_orange",
+    //     "Copywriting":"_purple",
+    //     "Research":"_green"
 
-    }
+    // }
     
     // const colorStyle = colorList[topic] || "_grey"
 
