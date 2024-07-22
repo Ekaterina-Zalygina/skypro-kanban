@@ -2,8 +2,9 @@ import { useState } from "react"
 import { Container } from "../../globalStyle.styled"
 import * as S from "./header.styled.js"
 import { Link } from "react-router-dom"
+import { routes } from "../../router/routes.js"
 
-export const Header = ({addCards, intoTheme, setIntoTheme}) => {
+export const Header = ({addCards, intoTheme, setIntoTheme, isAuth}) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpenUser = () => {
@@ -13,16 +14,17 @@ export const Header = ({addCards, intoTheme, setIntoTheme}) => {
     const onIntoTheme = () => {
         setIntoTheme(intoTheme === "light" ? "dark" : "light")
     }
+
     return (
         <S.Header>
         <Container>
             <S.HeaderBlock>
-                <S.HeaderLogoLight>
+                <S.HeaderLogo className="_light">
                     <a href="" target="_self"><img src="images/logo.png" alt="logo"/></a>
-                </S.HeaderLogoLight>
-                <S.HeaderLogoDark>
+                </S.HeaderLogo>
+                <S.HeaderLogo className="_dark">
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
-                </S.HeaderLogoDark>
+                </S.HeaderLogo>
                 <S.HeaderNav>
                     <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
                     <S.HeaderUserHover02 onClick={toggleOpenUser}>Ivan Ivanov</S.HeaderUserHover02>
@@ -36,7 +38,7 @@ export const Header = ({addCards, intoTheme, setIntoTheme}) => {
                             <p>Темная тема</p>
                             <input checked={intoTheme === "dark"} onClick={onIntoTheme} type="checkbox" className="checkbox" name="checkbox"/>
                         </S.PopUserSetTheme>
-                        <S.HeaderExit type="button" ><Link to={"/exit"}>Выйти</Link></S.HeaderExit>
+                        <S.HeaderExit type="button" ><Link to={routes.exit}>Выйти</Link></S.HeaderExit>
                     </S.HeaderPopUserSet>
                     )}
 

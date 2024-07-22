@@ -19,15 +19,17 @@ export const HeaderBlock = styled.div`
   padding: 0 10px;
 `
 
-export const HeaderLogoLight = styled.div`
- width: 85px;
+export const HeaderLogo = styled.div`
+img {
+  width: 85px;
+}
  background-color: ${({theme}) => theme.logo}
 `
 
-export const HeaderLogoDark = styled.div`
+/* export const HeaderLogoDark = styled.div`
  width: 85px;
  background-color: ${({theme}) => theme.logo}
-`
+`  */
 
 export const HeaderNav = styled.nav`
   max-width: 290px;

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import { Header } from "../../components/Header"
 import { Main } from "../../components/Main"
-import { PopBrowse } from "../../components/PopBrowse"
-import { PopUser } from "../../components/PopUser"
 import { Wrapper } from "../../globalStyle.styled"
 import { tasks } from "../../../data"
 import loader from "/images/loader.jpg"
@@ -37,7 +35,7 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
         <Wrapper>
           <Outlet/>
           <popNewCard/>
-          <PopBrowse />
+          {/* <PopBrowse /> */}
           {/* <PopUser />  */}
       <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
       {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
