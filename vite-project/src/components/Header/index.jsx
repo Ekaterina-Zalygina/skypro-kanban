@@ -19,12 +19,12 @@ export const Header = ({addCards, intoTheme, setIntoTheme}) => {
         <S.Header>
         <Container>
             <S.HeaderBlock>
-                <S.HeaderLogo className="_light">
-                    <a href="" target="_self"><img src="images/logo.png" alt="logo"/></a>
-                </S.HeaderLogo>
-                <S.HeaderLogo className="_dark">
+                <S.HeaderLogoLight>
+                    <a href="" target="_self">< img src="images/logo.png" alt="logo"/></a>
+                </S.HeaderLogoLight>
+                <S.HeaderLogoDark>
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
-                </S.HeaderLogo>
+                </S.HeaderLogoDark>
                 <S.HeaderNav>
                     <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
                     <S.HeaderUserHover02 onClick={toggleOpenUser}>Ivan Ivanov</S.HeaderUserHover02>

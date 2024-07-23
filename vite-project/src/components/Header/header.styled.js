@@ -19,17 +19,19 @@ export const HeaderBlock = styled.div`
   padding: 0 10px;
 `
 
-export const HeaderLogo = styled.div`
+export const HeaderLogoLight = styled.div`
 img {
   width: 85px;
 }
- background-color: ${({theme}) => theme.logo}
+ display: ${({theme}) => (theme.logoLight === "images/logo.png" ? "block" : "none")}
 `
 
-/* export const HeaderLogoDark = styled.div`
- width: 85px;
- background-color: ${({theme}) => theme.logo}
-`  */
+export const HeaderLogoDark = styled.div`
+img {
+  width: 85px;
+}
+ display: ${({theme}) => (theme.logoDark === "images/logo_dark.png" ? "block" : "none")}
+` 
 
 export const HeaderNav = styled.nav`
   max-width: 290px;
@@ -89,13 +91,16 @@ export const HeaderPopUserSet = styled.div`
   height: 205px;
   border-radius: 10px;
   border: 0.7px solid rgba(148, 166, 190, 0.4);
-  background: #FFF;
+  background: ${({theme}) => theme.modalEye};
   box-shadow: 0px 10px 39px 0px rgba(26, 56, 101, 0.21);
   padding: 34px;
   text-align: center;
   z-index: 2;
 
-  .pop-user-set:target,
+  a {
+  color: #565EEF;
+}
+  &:target,
 .pop-exit:target,
 .pop-new-card:target,
 .pop-browse:target {
@@ -111,13 +116,10 @@ button {
   border: 1px solid #565EEF;
 }
 
-a {
-  color: #565EEF;
-}
 `
 
 export const HeaderPopUserSetName = styled.p`
-  color: #000;
+  color: ${({theme}) => theme.modalName};
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
@@ -140,7 +142,7 @@ export const PopUserSetTheme = styled.div`
   margin-bottom: 30px;
 
   p {
-  color: #000;
+  color: ${({theme}) => theme.modalTheme};
   font-size: 14px;
   line-height: 21px;
   letter-spacing: -0.14px;
@@ -175,5 +177,6 @@ input:checked[type=checkbox]::before {
 } 
 `
 export const HeaderExit = styled.button`
+
 ${Hover03}
 `
