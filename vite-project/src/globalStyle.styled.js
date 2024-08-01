@@ -92,7 +92,7 @@ export const Hover03 = css`
     color: #FFFFFF;
 }
 
- a {
+ /* a {
   color: #FFFFFF;
-}
+} */
 `
