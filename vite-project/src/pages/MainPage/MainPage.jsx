@@ -2,14 +2,16 @@ import { useEffect, useState } from "react"
 import { Header } from "../../components/Header"
 import { Main } from "../../components/Main"
 import { Wrapper } from "../../globalStyle.styled"
-import { tasks } from "../../../data"
+// import { tasks } from "../../../data"
 import loader from "/images/loader.jpg"
 import { Outlet } from "react-router-dom"
+import { getTasks } from "../../API/tasks"
 
-export const MainPage = ({intoTheme, setIntoTheme}) => {
+export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
 
-    const [cards, setCards] = useState(tasks)
-    const [isLoading, setIsLoading] = useState(false)
+    const [cards, setCards] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState()
 
     const addCards = () => {
 
@@ -25,6 +27,17 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
       }
   
       useEffect(() => {
+        getTasks(user.token).then ((res) => {
+          setCards(res.tasks)
+          // setIsLoading(false)
+        })
+        .catch((error) => {
+          console.log(error.message)
+          setError(error.message)
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
         setIsLoading(true)
         setTimeout(() => {
           setIsLoading(false)
@@ -37,8 +50,8 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
           <popNewCard/>
           {/* <PopBrowse /> */}
           {/* <PopUser />  */}
-      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
-      {isLoading ? <img src={loader} alt="" /> : <Main cards={cards} />}
+      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme} setUser={setUser}/>
+      {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={cards} />}
     </Wrapper>
     )
 }

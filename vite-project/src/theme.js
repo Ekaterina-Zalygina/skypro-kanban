@@ -16,7 +16,10 @@ wrapperRegister: "#EAEEF6",
 bodyLogin: "#EAEEF6",
 modalEye: "#FFFFFF", 
 modalName: "#000000",
-modalTheme: "#000000"
+modalTheme: "#000000",
+// hover03: "background-color: #33399b; color: #FFFFFF; a {color: #FFFFFF;}",
+hover03Text: "#565EEF",
+hover03Border: "#565EEF"
 }
 
 export const dark = {
@@ -37,5 +40,8 @@ wrapperRegister: "#151419",
 bodyLogin: "#FFFFFF",
 modalEye: "#202229", 
 modalName: "#FFFFFF",
-modalTheme: "#FFFFFF"
+modalTheme: "#FFFFFF",
+// hover03: "background-color: #565EEF; color: #FFFFFF; border-color: #FFFFFF; a {color: #FFFFFF;}"
+hover03Text: "#FFFFFF",
+hover03Border: "#FFFFFF"
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import * as S from "./cards.styled.js"
 
+
 export const Card = ({topic, title, date, id}) => {
 
     // const colorList = {
@@ -56,12 +57,12 @@ export const Card = ({topic, title, date, id}) => {
                   />
                 </g>
                 <defs>
-                  <clipPath id="clip0_1_415">
-                    <rect width="13" height="13" fill="white" />
-                  </clipPath>
+                  <S.clipPath id="clip0_1_415">
+                    
+                  </S.clipPath>
                 </defs>
               </S.CardDate>
-              <S.CardDateI>{date}</S.CardDateI>
+              <S.CardDateI ><img src="images/calendar.png" alt="" />{date}</S.CardDateI>
             </S.CardContent>
           </S.CardCards>
         </S.CardsItem>

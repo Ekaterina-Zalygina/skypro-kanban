@@ -86,13 +86,13 @@ color: #33399b;
 }
 `
 
-export const Hover03 = css`
- &:hover{  
-    background-color: #33399b;
-    color: #FFFFFF;
-}
+// export const Hover03 = css`
+//  &:hover{  
+//     background-color: #33399b;
+//     color: #FFFFFF;
+// }
 
- /* a {
-  color: #FFFFFF;
-} */
-`
+//  a {
+//   color: #565EEF;
+// }
+// `
