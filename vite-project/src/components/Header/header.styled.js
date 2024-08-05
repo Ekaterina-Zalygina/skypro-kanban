@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Hover01, Hover02, Hover03 } from "../../globalStyle.styled";
+import { Hover01, Hover02 } from "../../globalStyle.styled";
 
 export const Header = styled.header`
   width: 100%;
@@ -54,6 +54,10 @@ export const HeaderBtnMain = styled.button`
   margin-right: 20px;
 
   ${Hover01}
+
+  a {
+    color: #ffffff;
+  }
 `
 
 export const HeaderUserHover02 = styled.a`
@@ -97,24 +101,24 @@ export const HeaderPopUserSet = styled.div`
   text-align: center;
   z-index: 2;
 
-  a {
+  /* a {
   color: #565EEF;
-}
-  &:target,
+} */
+  /* &:target,
 .pop-exit:target,
 .pop-new-card:target,
 .pop-browse:target {
   display: block;
-}
+} */
 
-button {
+/* button {
   width: 72px;
   height: 30px;
   background: transparent;
   color: #565EEF;
   border-radius: 4px;
   border: 1px solid #565EEF;
-}
+} */
 
 `
 
@@ -155,9 +159,7 @@ input[type=checkbox] {
   border-radius: 100px;
   background: #EAEEF6;
   outline: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 input[type=checkbox]::before {
@@ -177,6 +179,19 @@ input:checked[type=checkbox]::before {
 } 
 `
 export const HeaderExit = styled.button`
+  width: 72px;
+  height: 30px;
+  background: transparent;
+  color: ${({theme}) => theme.hover03Text};
+  border-radius: 4px;
+  border: 1px solid ${({theme}) => theme.hover03Border};;
 
-${Hover03}
+
+  &:hover {
+  background-color: #565EEF;
+  color: #FFFFFF;
+} 
+&:hover a {
+  color: #FFFFFF;
+}
 `

@@ -96,10 +96,10 @@ export const CardDate = styled.div`
   color: #94A6BE;
   letter-spacing: 0.2px;
   }
+`
 
-  svg {
-  width: 13px;
-  }
+export const clipPath = styled.div`
+margin-left: -13px;
 `
 
 export const CardDateI = styled.div`
@@ -109,5 +109,7 @@ font-weight: 400;
 line-height: 11.72px;
 letter-spacing: 0.01em;
 text-align: left;
-color: ${({theme}) => theme.calendar}
+color: ${({theme}) => theme.calendar};
+display: flex;
+gap: 6px;
 `

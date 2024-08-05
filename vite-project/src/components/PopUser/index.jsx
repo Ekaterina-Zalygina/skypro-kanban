@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
 import { routes } from "../../router/routes"
 
-export const PopUser = ({setIsAuth}) => {
+export const PopUser = ({setUser}) => {
     const Navigate = useNavigate()
 
     const Logout = () => {
-        setIsAuth(false)
+        setUser(false)
         Navigate(routes.login)
     }
 
