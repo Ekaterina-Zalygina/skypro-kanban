@@ -20,7 +20,7 @@ export const AppRoutes = ({intoTheme, setIntoTheme}) => {
                 <Route path={routes.card} element={<CardPage/>}/>
              </Route>
                 <Route path={routes.notFound} element={<NotFound />}/>
-                <Route path={routes.register} element={<Register/>}/>
+                <Route path={routes.register} element={<Register setUser={setUser}/>}/>
                 <Route path={routes.login} element={<LoginPage setUser={setUser}/>}/>
             </Routes>
         </BrowserRouter>
