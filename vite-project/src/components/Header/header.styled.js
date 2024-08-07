@@ -184,9 +184,12 @@ export const HeaderExit = styled.button`
   background: transparent;
   color: ${({theme}) => theme.hover03Text};
   border-radius: 4px;
-  border: 1px solid ${({theme}) => theme.hover03Border};;
+  border: 1px solid ${({theme}) => theme.hover03Border};
 
 
+& a {
+  color: inherit;
+}
   &:hover {
   background-color: #565EEF;
   color: #FFFFFF;

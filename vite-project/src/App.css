@@ -737,6 +737,10 @@ body {
   color: #565EEF;
 }
 
+._hide {
+  display: none;
+}
+
 ._btn-bg {
   border-radius: 4px;
   background: #565EEF;
@@ -744,6 +748,7 @@ body {
   outline: none;
   color: #FFFFFF;
 } */
+
 /* ._btn-bg a {
   color: #FFFFFF;
 }
