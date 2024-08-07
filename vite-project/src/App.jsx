@@ -4,6 +4,8 @@ import { GlobalStyle } from './globalStyle.styled'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from './theme'
 import { AppRoutes } from './router/AppRoutes.jsx'
+import { UserProvider } from './context/userContext.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -17,8 +19,9 @@ function App() {
     <>
     <ThemeProvider theme={intoTheme === "light" ? light : dark}>
     <GlobalStyle/>
-    <AppRoutes setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
-     
+    <BrowserRouter>
+    <UserProvider><AppRoutes setIntoTheme={setIntoTheme} intoTheme={intoTheme}/></UserProvider>
+    </BrowserRouter>
     </ThemeProvider>
     </>
   )

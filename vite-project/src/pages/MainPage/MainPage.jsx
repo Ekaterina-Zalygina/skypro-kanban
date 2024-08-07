@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Header } from "../../components/Header"
 import { Main } from "../../components/Main"
 import { Wrapper } from "../../globalStyle.styled"
@@ -6,9 +6,11 @@ import { Wrapper } from "../../globalStyle.styled"
 import loader from "/images/loader.jpg"
 import { Outlet } from "react-router-dom"
 import { getTasks } from "../../API/tasks"
+import { userContext } from "../../context/userContext"
 
-export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
+export const MainPage = ({intoTheme, setIntoTheme}) => {
 
+  const {user} = useContext(userContext)
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState()
@@ -45,7 +47,7 @@ export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
           <popNewCard/>
           {/* <PopBrowse /> */}
           {/* <PopUser />  */}
-      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme} setUser={setUser} user={user}/>
+      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
       {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={cards} />}
     </Wrapper>
     )

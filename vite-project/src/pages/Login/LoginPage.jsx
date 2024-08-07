@@ -1,11 +1,13 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ContainerSignin, ModalBlockLogin, ModalBtnEnterLogin, ModalFormGroupLogin, ModalFormLogin, ModalInputLogin, ModalLogin, ModalTtlLogin, WrapperLogin } from "./login.styled"
 import { routes } from "../../router/routes.js"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { signIn } from "../../API/user.js"
+import { userContext } from "../../context/userContext.jsx"
 
-export const LoginPage = ({setUser}) => {
-	const Navigation = useNavigate()
+export const LoginPage = () => {
+	
+	const {login} = useContext(userContext)
 	const [formData, setFormData] = useState({login: "", password: ""})
 	const [error, setError] = useState(null)
 	
@@ -25,8 +27,7 @@ export const LoginPage = ({setUser}) => {
 		signIn(formData)
 		.then((res) => {
 			console.log(res.user)
-			setUser(res.user)
-			Navigation(routes.main)
+			login(res.user)
 		})
 		.catch((error) => {
 			console.log(error.message)

@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Container } from "../../globalStyle.styled"
 import * as S from "./header.styled.js"
 import { Link } from "react-router-dom"
 import { routes } from "../../router/routes.js"
+import { userContext } from "../../context/userContext.jsx"
 
-export const Header = ({addCards, intoTheme, setIntoTheme, user}) => {
+export const Header = ({addCards, intoTheme, setIntoTheme}) => {
 
+    const {user} = useContext(userContext)
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpenUser = () => {
         setIsOpen(!isOpen)
