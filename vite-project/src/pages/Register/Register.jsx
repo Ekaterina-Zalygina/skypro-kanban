@@ -13,17 +13,17 @@ export const Register = ({setUser}) => {
 	const userProfile = (e) => {
 		e.preventDefault()
 		
-		if(formData.login.trim === "") {
+		if(formData.login.trim() === "") {
 			setError("Введите логин")
 			return
 		}
 
-		if(formData.password.trim === "") {
+		if(formData.password.trim() === "") {
 			setError("Введите пароль")
 			return
 		}
 
-		if(formData.name.trim === "") {
+		if(formData.name.trim() === "") {
 			setError("Введите Ваше имя")
 			return
 		}
@@ -53,7 +53,7 @@ export const Register = ({setUser}) => {
 						<ModalInputRegister onChange={(e) => setFormData(({...formData, login: e.target.value}))} type="text" name="login" id="loginReg" placeholder="Эл. почта" />
 						<ModalInputRegister onChange={(e) => setFormData(({...formData, password: e.target.value}))} type="password" name="password" id="passwordFirst" placeholder="Пароль" />
 						{error && <p>{error}</p>}
-						<ModalBtnRegister type="submit" id="SignUpEnter"><Link to={routes.main}>Зарегистрироваться</Link> </ModalBtnRegister>
+						<ModalBtnRegister type="submit" id="SignUpEnter">Зарегистрироваться</ModalBtnRegister>
 						<ModalFormGroupRegister>
 							<p>Уже есть аккаунт? <Link to={routes.login}>Войдите здесь</Link></p>
 						</ModalFormGroupRegister>

@@ -29,7 +29,6 @@ export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
       useEffect(() => {
         getTasks(user.token).then ((res) => {
           setCards(res.tasks)
-          // setIsLoading(false)
         })
         .catch((error) => {
           console.log(error.message)
@@ -38,10 +37,6 @@ export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
         .finally(() => {
           setIsLoading(false)
         })
-        setIsLoading(true)
-        setTimeout(() => {
-          setIsLoading(false)
-        }, 1500)
       }, [])
 
     return (
@@ -50,7 +45,7 @@ export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
           <popNewCard/>
           {/* <PopBrowse /> */}
           {/* <PopUser />  */}
-      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme} setUser={setUser}/>
+      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme} setUser={setUser} user={user}/>
       {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={cards} />}
     </Wrapper>
     )

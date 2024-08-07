@@ -12,12 +12,12 @@ export const LoginPage = ({setUser}) => {
 	const handleLogin = (e) => {
 		e.preventDefault()
 		
-		if(formData.login.trim === "") {
+		if(formData.login.trim() === "") {
 			setError("Введите логин")
 			return
 		}
 
-		if(formData.password.trim === "") {
+		if(formData.password.trim() === "") {
 			setError("Введите пароль")
 			return
 		}

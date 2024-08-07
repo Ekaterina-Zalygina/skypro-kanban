@@ -4,7 +4,7 @@ import * as S from "./header.styled.js"
 import { Link } from "react-router-dom"
 import { routes } from "../../router/routes.js"
 
-export const Header = ({addCards, intoTheme, setIntoTheme}) => {
+export const Header = ({addCards, intoTheme, setIntoTheme, user}) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpenUser = () => {
@@ -27,13 +27,13 @@ export const Header = ({addCards, intoTheme, setIntoTheme}) => {
                 </S.HeaderLogoDark>
                 <S.HeaderNav>
                     <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
-                    <S.HeaderUserHover02 onClick={toggleOpenUser}>Ivan Ivanov</S.HeaderUserHover02>
+                    <S.HeaderUserHover02 onClick={toggleOpenUser}>{user.name}</S.HeaderUserHover02>
 
                     {/* модальное окно */}
                     {isOpen && (
                         <S.HeaderPopUserSet id="user-set-target">
-                        <S.HeaderPopUserSetName>Ivan Ivanov</S.HeaderPopUserSetName>
-                        <S.PopUserSetEmail>ivan.ivanov@gmail.com</S.PopUserSetEmail>
+                        <S.HeaderPopUserSetName>{user.name}</S.HeaderPopUserSetName>
+                        <S.PopUserSetEmail>{user.login}</S.PopUserSetEmail>
                         <S.PopUserSetTheme>
                             <p>Темная тема</p>
                             <input checked={intoTheme === "dark"} onClick={onIntoTheme} type="checkbox" className="checkbox" name="checkbox"/>
