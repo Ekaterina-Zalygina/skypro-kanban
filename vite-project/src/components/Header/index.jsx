@@ -28,7 +28,9 @@ export const Header = ({addCards, intoTheme, setIntoTheme}) => {
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
                 </S.HeaderLogoDark>
                 <S.HeaderNav>
-                    <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
+                    <Link to={}>
+                     <S.HeaderBtnMain id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
+                    </Link>
                     <S.HeaderUserHover02 onClick={toggleOpenUser}>{user.name}</S.HeaderUserHover02>
 
                     {/* модальное окно */}
