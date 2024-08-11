@@ -17,7 +17,7 @@ export const AppRoutes = ({intoTheme, setIntoTheme}) => {
                 <Route path={routes.main} element={<MainPage setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>}/>
                 <Route path={routes.exit} element={<ExitPage/>}/>
                 <Route path={routes.card} element={<CardPage/>}/>
-                <Route path={routes.card} element={<AddCardPage/>}/>
+                <Route path={routes.add} element={<AddCardPage/>}/>
              </Route>
                 <Route path={routes.notFound} element={<NotFound />}/>
                 <Route path={routes.register} element={<Register/>}/>

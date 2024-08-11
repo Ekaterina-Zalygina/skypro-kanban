@@ -47,7 +47,7 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
           <popNewCard/>
           {/* <PopBrowse /> */}
           {/* <PopUser />  */}
-      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
+      <Header setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
       {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={cards} />}
     </Wrapper>
     )

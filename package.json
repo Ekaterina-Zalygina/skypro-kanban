@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^3.6.0",
-    "react-router-dom": "^6.25.1",
-    "styled-components": "^6.1.11"
+    "react-day-picker": "^9.0.8",
+    "react-router-dom": "^6.26.0",
+    "styled-components": "^6.1.12"
   }
 }
