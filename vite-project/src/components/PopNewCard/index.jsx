@@ -1,15 +1,13 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { routes } from "../../router/routes"
 import { Link } from "react-router-dom"
-import { NewTask } from "../../API/tasks"
-import { TaskContext } from "../../context/taskContext"
+import * as S from "./popNewCard.styled.js"
 
 export const PopNewCard = () => {
 
-	// const {user} = useContext(userContext)
-	const [formData, setFormData] = useState({name: "", text: ""})
+	const [formData, setFormData] = useState({title: "", text: ""})
 	const [error, setError] = useState(null)
-	const { setTask } = useContext(TaskContext);
+
 	
 	const handleTasks = (e) => {
 		e.preventDefault()
@@ -46,37 +44,29 @@ export const PopNewCard = () => {
 			setError("Выберите статус задачи")
 			return
 		}
-
-		NewTask(token, taskData)
-		.then((res) => {
-			setTask(res.task)
-		})
-		.catch((error) => {
-			setError(error.message)
-		}) 
 	}
 
 
     return (
-        <div className="pop-new-card" id="popNewCard">
-<div className="pop-new-card__container">
-    <div className="pop-new-card__block">
-        <div className="pop-new-card__content">
-            <h3 className="pop-new-card__ttl">Создание задачи</h3>
-            <a href="#" className="pop-new-card__close">&#10006;</a>
-            <div className="pop-new-card__wrap">
-                <form className="pop-new-card__form form-new" id="formNewCard" action="#" onSubmit={handleTasks}>
-                    <div className="form-new__block">
+        <S.NewCard id="popNewCard">
+<S.NewCardContainer>
+    <S.NewCardBlock>
+        <S.NewCardContent>
+            <S.NewCardTtl>Создание задачи</S.NewCardTtl>
+            <S.NewCardClose>&#10006;</S.NewCardClose>
+            <S.NewCardWrap>
+                <S.NewCardForm id="formNewCard" action="#" onSubmit={handleTasks}>
+                    <S.FormNewBlock>
                         <label for="formTitle" className="subttl">Название задачи</label>
                         <input className="form-new__input" onChange={(e) => setFormData(({...formData, name: e.target.value}))} type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autofocus/>
                         {error && <p>{error}</p>}
-                    </div>
-                    <div className="form-new__block">
+                    </S.FormNewBlock>
+                    <S.FormNewBlock>
                         <label for="textArea" className="subttl">Описание задачи</label>
                         <textarea className="form-new__area" onChange={(e) => setFormData(({...formData, text: e.target.value}))} name="text" id="textArea"  placeholder="Введите описание задачи..."></textarea>
                         {error && <p>{error}</p>}
-                    </div>
-                </form>
+                    </S.FormNewBlock>
+                </S.NewCardForm>
                 <div className="pop-new-card__calendar calendar">
                     <p className="calendar__ttl subttl">Даты</p>									
                     <div className="calendar__block">
@@ -150,7 +140,7 @@ export const PopNewCard = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </S.NewCardWrap>
             <div className="pop-new-card__categories categories">
                 <p className="categories__p subttl">Категория</p>
                 <div className="categories__themes">
@@ -166,9 +156,9 @@ export const PopNewCard = () => {
                 </div>
             </div>
             <button className="form-new__create _hover01" id="btnCreate"><Link to={routes.main}>Создать задачу</Link></button>
-        </div>
-    </div>
-</div>
-</div>
+        </S.NewCardContent>
+    </S.NewCardBlock>
+</S.NewCardContainer>
+</S.NewCard>
 	)
 }
