@@ -57,18 +57,18 @@ export const PopNewCard = () => {
             <S.NewCardWrap>
                 <S.NewCardForm id="formNewCard" action="#" onSubmit={handleTasks}>
                     <S.FormNewBlock>
-                        <label for="formTitle" className="subttl">Название задачи</label>
-                        <input className="form-new__input" onChange={(e) => setFormData(({...formData, name: e.target.value}))} type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autofocus/>
+                        <S.NewCardSubttl for="formTitle">Название задачи</S.NewCardSubttl>
+                        <S.FormNewInput onChange={(e) => setFormData(({...formData, name: e.target.value}))} type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autofocus/>
                         {error && <p>{error}</p>}
                     </S.FormNewBlock>
                     <S.FormNewBlock>
-                        <label for="textArea" className="subttl">Описание задачи</label>
-                        <textarea className="form-new__area" onChange={(e) => setFormData(({...formData, text: e.target.value}))} name="text" id="textArea"  placeholder="Введите описание задачи..."></textarea>
+                        <S.NewCardSubttl for="textArea">Описание задачи</S.NewCardSubttl>
+                        <S.FormNewArea onChange={(e) => setFormData(({...formData, text: e.target.value}))} name="text" id="textArea"  placeholder="Введите описание задачи..."></S.FormNewArea>
                         {error && <p>{error}</p>}
                     </S.FormNewBlock>
                 </S.NewCardForm>
                 <div className="pop-new-card__calendar calendar">
-                    <p className="calendar__ttl subttl">Даты</p>									
+                    <S.CalendarTtl>Даты</S.CalendarTtl>									
                     <div className="calendar__block">
                         <div className="calendar__nav">
                             <div className="calendar__month">Сентябрь 2023</div>
