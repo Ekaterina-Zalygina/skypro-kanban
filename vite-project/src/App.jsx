@@ -6,6 +6,7 @@ import { dark, light } from './theme'
 import { AppRoutes } from './router/AppRoutes.jsx'
 import { UserProvider } from './context/userContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import { TasksProvider } from './context/taskContext.jsx'
 
 function App() {
 
@@ -20,7 +21,11 @@ function App() {
     <ThemeProvider theme={intoTheme === "light" ? light : dark}>
     <GlobalStyle/>
     <BrowserRouter>
-    <UserProvider><AppRoutes setIntoTheme={setIntoTheme} intoTheme={intoTheme}/></UserProvider>
+    <UserProvider>
+    <TasksProvider>
+    <AppRoutes setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
+    </TasksProvider>
+    </UserProvider>
     </BrowserRouter>
     </ThemeProvider>
     </>

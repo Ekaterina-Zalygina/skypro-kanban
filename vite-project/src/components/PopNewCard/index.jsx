@@ -1,24 +1,27 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { routes } from "../../router/routes"
 import { Link } from "react-router-dom"
 import * as S from "./popNewCard.styled.js"
+import { userContext } from "../../context/userContext.jsx"
+import { newTask } from "../../API/tasks.js"
+import { MyDatePicker } from "../Calendar/CalendarPicker.jsx"
 
 export const PopNewCard = () => {
 
 	const [formData, setFormData] = useState({title: "", text: ""})
 	const [error, setError] = useState(null)
+	const {user} = useContext(userContext)
 
+	const [addValue, setAddValue] = useState({
+		text: "",
+		topic: "",
+		title: "",
+		date: null,
+		status: "Без статуса"
+	})
 	
-	const handleTasks = (e) => {
+	const createTask = (e) => {
 		e.preventDefault()
-
-		const [addValue, setAddValue] = useState({
-			text: "",
-			topic: "",
-			title: "",
-			date: "",
-			status: ""
-		})
 
 		if(addValue.text === "") {
 			setError("Введите описание задачи")
@@ -35,7 +38,7 @@ export const PopNewCard = () => {
 			return
 		}
 
-		if(addValue.date === "") {
+		if(addValue.date) {
 			setError("Выберите дату")
 			return
 		}
@@ -44,6 +47,8 @@ export const PopNewCard = () => {
 			setError("Выберите статус задачи")
 			return
 		}
+
+		newTask({token: user.token, taskData: addValue})
 	}
 
 
@@ -55,7 +60,7 @@ export const PopNewCard = () => {
             <S.NewCardTtl>Создание задачи</S.NewCardTtl>
             <S.NewCardClose>&#10006;</S.NewCardClose>
             <S.NewCardWrap>
-                <S.NewCardForm id="formNewCard" action="#" onSubmit={handleTasks}>
+                <S.NewCardForm id="formNewCard" action="#" onSubmit={createTask}>
                     <S.FormNewBlock>
                         <S.NewCardSubttl for="formTitle">Название задачи</S.NewCardSubttl>
                         <S.FormNewInput onChange={(e) => setFormData(({...formData, name: e.target.value}))} type="text" name="name" id="formTitle" placeholder="Введите название задачи..." autofocus/>
@@ -67,7 +72,8 @@ export const PopNewCard = () => {
                         {error && <p>{error}</p>}
                     </S.FormNewBlock>
                 </S.NewCardForm>
-                <div className="pop-new-card__calendar calendar">
+				<MyDatePicker selected = {addValue.date} setSelected = {(date) => setAddValue({...addValue, date})}/>
+                {/* <div className="pop-new-card__calendar calendar">
                     <S.CalendarTtl>Даты</S.CalendarTtl>									
                     <S.CalendarBlock>
                         <S.CalendarNav>
@@ -139,7 +145,7 @@ export const PopNewCard = () => {
                             <S.CalendarP>Выберите срок исполнения <S.CalendarPSpan></S.CalendarPSpan>.</S.CalendarP>
                         </S.CalendarPeriod>
                     </S.CalendarBlock>
-                </div>
+                </div> */}
             </S.NewCardWrap>
             <div className="pop-new-card__categories categories">
                 <S.CategoriesP>Категория</S.CategoriesP>
@@ -155,7 +161,7 @@ export const PopNewCard = () => {
                     </S.CategoriesTheme>
                 </S.CategoriesThemes>
             </div>
-            <S.FormNewCreate id="btnCreate"><Link to={routes.main}>Создать задачу</Link></S.FormNewCreate>
+            <S.FormNewCreate id="btnCreate" type="submit">Создать задачу</S.FormNewCreate>
         </S.NewCardContent>
     </S.NewCardBlock>
 </S.NewCardContainer>

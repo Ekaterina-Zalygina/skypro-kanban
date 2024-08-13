@@ -16,7 +16,7 @@ export const getTasks = async(token) => {
 }
 
 //добавление задачи
-export const NewTask = async(token, taskData) => {
+export const newTask = async({token, taskData}) => {
     const response = await fetch (apiURL, 
         {
             method: "POST",
