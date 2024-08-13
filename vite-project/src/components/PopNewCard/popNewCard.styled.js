@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Hover01 } from "../../globalStyle.styled";
 
 export const NewCard = styled.div`
   width: 100%;
@@ -161,4 +162,166 @@ export const CalendarTtl = styled.p`
   font-weight: 600;
   line-height: 1;
   }
+`
+
+export const CalendarBlock = styled.div`
+  display: block;
+`
+
+export const CalendarNav = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 0 7px;
+`
+
+export const CalendarMonth = styled.div`
+  color: #94A6BE;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 600;
+`
+
+export const NavActions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const NavAction = styled.div`
+  width: 18px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const NavActionSvg = styled.svg`
+  fill: #94A6BE;
+`
+
+export const CalendarContent = styled.div`
+  margin-bottom: 12px;
+`
+
+export const CalendarDayNames = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 7px 0;
+  padding: 0 7px;
+`
+
+export const CalendarDayName = styled.div`
+  color: #94A6BE;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.2px;
+`
+
+export const CalendarCells = styled.div`
+  width: 182px;
+  height: 126px;
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const CalendarCell = styled.div`
+  width: 22px;
+  height: 22px;
+  margin: 2px;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #94A6BE;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+`
+
+export const CalendarPeriod = styled.div`
+  padding: 0 7px;
+`
+
+export const CalendarP = styled.p`
+  color: #94A6BE;
+  font-size: 10px;
+  line-height: 1;
+`
+
+export const CalendarPSpan = styled.span`
+  color: #000000;
+`
+
+export const CategoriesP = styled.p`
+  margin-bottom: 14px;
+`
+
+export const CategoriesThemes = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+`
+
+export const CategoriesTheme = styled.div`
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-right: 7px;
+  opacity: 0.4;
+
+  p {
+    font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+  }
+`
+
+export const CategoriesActive = styled.div`
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-right: 7px;
+  opacity: 0.4;
+
+  p {
+    font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
+  }
+
+  &_active-category {
+  opacity: 1 !important;
+}
+`
+
+export const FormNewCreate = styled.button`
+  width: 132px;
+  height: 30px;
+  background-color: #565EEF;
+  border-radius: 4px;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #FFFFFF;
+  float: right;
+
+  ${Hover01}
 `
