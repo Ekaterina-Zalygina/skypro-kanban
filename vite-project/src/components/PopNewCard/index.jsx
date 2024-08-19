@@ -1,10 +1,11 @@
 import { useContext, useState } from "react"
-import { routes } from "../../router/routes"
-import { Link } from "react-router-dom"
+// import { routes } from "../../router/routes"
+// import { Link } from "react-router-dom"
 import * as S from "./popNewCard.styled.js"
 import { userContext } from "../../context/userContext.jsx"
 import { newTask } from "../../API/tasks.js"
 import { MyDatePicker } from "../Calendar/CalendarPicker.jsx"
+// import { Green, Orange, Purple } from "../../globalStyle.styled.js"
 
 export const PopNewCard = () => {
 
@@ -150,14 +151,14 @@ export const PopNewCard = () => {
             <div className="pop-new-card__categories categories">
                 <S.CategoriesP>Категория</S.CategoriesP>
                 <S.CategoriesThemes>
-                    <S.CategoriesActive>
-                        <p className="_orange">Web Design</p>
+                    <S.CategoriesActive $isActive={addValue.topic === "Web Design"} $colorTheme={"_orange"}>
+                        <S.CategigoriesName>Web Design</S.CategigoriesName> 
                     </S.CategoriesActive>
-                    <S.CategoriesTheme>
-                        <p className="_green">Research</p>
+                    <S.CategoriesTheme $isActive={addValue.topic === "Research"} $colorTheme={"_green"}>
+                        <S.CategigoriesName>Research</S.CategigoriesName>
                     </S.CategoriesTheme>
-                    <S.CategoriesTheme>
-                        <p className="_purple">Copywriting</p>
+                    <S.CategoriesTheme $isActive={addValue.topic === "Copywriting"} $colorTheme={"_purple"}>
+                        <S.CategigoriesName>Copywriting</S.CategigoriesName>
                     </S.CategoriesTheme>
                 </S.CategoriesThemes>
             </div>

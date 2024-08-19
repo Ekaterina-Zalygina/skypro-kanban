@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Hover01 } from "../../globalStyle.styled";
+import { CategoriesColor } from "../../CategoriesColor";
 
 export const NewCard = styled.div`
   width: 100%;
@@ -296,18 +297,32 @@ export const CategoriesActive = styled.div`
   padding: 8px 20px;
   border-radius: 24px;
   margin-right: 7px;
-  opacity: 0.4;
+  opacity: ${({$isActive}) => $isActive ? '1' : '0.5'};
 
-  p {
+  color: ${({$themeColor}) => CategoriesColor[$themeColor]?.color || "#ffffff"};
+  background-color: ${({$themeColor}) => CategoriesColor[$themeColor]?.backgroundColor || "#94a6be"};
+
+  /* p {
     font-size: 14px;
   font-weight: 600;
   line-height: 14px;
   white-space: nowrap;
-  }
+  } */
 
-  &_active-category {
+  /* &_active-category {
   opacity: 1 !important;
-}
+  } */
+
+  /* opacity: ${({$isActive}) => $isActive ? '1' : '0.5'}; */
+
+
+`
+
+export const CategigoriesName = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  white-space: nowrap;
 `
 
 export const FormNewCreate = styled.button`
