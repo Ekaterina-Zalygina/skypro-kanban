@@ -1,12 +1,13 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ContainerSignup, ModalBlockRegister, ModalBtnRegister, ModalFormGroupRegister, ModalFormLogin, ModalInputRegister, ModalRegister, ModalTtlRegister, WrapperRegister } from "./register.styled"
 import { routes } from "../../router/routes.js"
 import { registrUser } from "../../API/registration.js"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { userContext } from "../../context/userContext.jsx"
 
-export const Register = ({setUser}) => {
+export const Register = () => {
 
-	const Navigation = useNavigate()
+	const {login} = useContext(userContext)
 	const [formData, setFormData] = useState({name: "", login: "", password: ""})
 	const [error, setError] = useState(null)
 	
@@ -31,8 +32,7 @@ export const Register = ({setUser}) => {
 		registrUser(formData)
 		.then((res) => {
 			console.log(res.user)
-			setUser(res.user)
-			Navigation(routes.main)
+			login(res.user)
 		})
 		.catch((error) => {
 			console.log(error.message)

@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Container } from "../../globalStyle.styled"
 import * as S from "./header.styled.js"
 import { Link } from "react-router-dom"
 import { routes } from "../../router/routes.js"
+import { userContext } from "../../context/userContext.jsx"
 
-export const Header = ({addCards, intoTheme, setIntoTheme, user}) => {
+export const Header = ({addCards, intoTheme, setIntoTheme}) => {
 
+    const {user} = useContext(userContext)
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpenUser = () => {
         setIsOpen(!isOpen)
@@ -26,7 +28,9 @@ export const Header = ({addCards, intoTheme, setIntoTheme, user}) => {
                     <a href="" target="_self"><img src="images/logo_dark.png" alt="logo"/></a>
                 </S.HeaderLogoDark>
                 <S.HeaderNav>
-                    <S.HeaderBtnMain onClick={addCards} id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
+                    <Link to={routes.add}>
+                     <S.HeaderBtnMain id="btnMainNew"><a>Создать новую задачу</a></S.HeaderBtnMain>
+                    </Link>
                     <S.HeaderUserHover02 onClick={toggleOpenUser}>{user.name}</S.HeaderUserHover02>
 
                     {/* модальное окно */}

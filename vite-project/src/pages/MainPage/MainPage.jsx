@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Header } from "../../components/Header"
 import { Main } from "../../components/Main"
 import { Wrapper } from "../../globalStyle.styled"
@@ -6,29 +6,32 @@ import { Wrapper } from "../../globalStyle.styled"
 import loader from "/images/loader.jpg"
 import { Outlet } from "react-router-dom"
 import { getTasks } from "../../API/tasks"
+import { userContext } from "../../context/userContext"
+import { TaskContext } from "../../context/taskContext"
 
-export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
+export const MainPage = ({intoTheme, setIntoTheme}) => {
 
-    const [cards, setCards] = useState([])
+  const {user} = useContext(userContext) //на будущее - лучше писать с большой буквы UserContext
+    const {tasks, setTasks} = useContext(TaskContext)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState()
 
-    const addCards = () => {
+    // const addCards = () => {
 
-        const newCard = {
-          id: cards.length + 1,
-          topic: "Web Design",
-          title: "Новая задача",
-          date: "30.10.2023",
-          status: "Без статуса"
-        }
+    //     const newCard = {
+    //       id: tasks.length + 1,
+    //       topic: "Web Design",
+    //       title: "Новая задача",
+    //       date: "30.10.2023",
+    //       status: "Без статуса"
+    //     }
   
-        setCards([...cards, newCard]) 
-      }
+    //     setTasks([...tasks, newCard]) 
+    //   }
   
       useEffect(() => {
         getTasks(user.token).then ((res) => {
-          setCards(res.tasks)
+          setTasks(res.tasks)
         })
         .catch((error) => {
           console.log(error.message)
@@ -45,8 +48,8 @@ export const MainPage = ({intoTheme, setIntoTheme, user, setUser}) => {
           <popNewCard/>
           {/* <PopBrowse /> */}
           {/* <PopUser />  */}
-      <Header addCards={addCards} setIntoTheme={setIntoTheme} intoTheme={intoTheme} setUser={setUser} user={user}/>
-      {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={cards} />}
+      <Header setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
+      {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={tasks} />}
     </Wrapper>
     )
 }

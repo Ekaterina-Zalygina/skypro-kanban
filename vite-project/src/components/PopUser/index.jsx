@@ -1,13 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { routes } from "../../router/routes"
+import { useContext } from "react"
+import { userContext } from "../../context/userContext"
 
-export const PopUser = ({setUser}) => {
-    const Navigate = useNavigate()
-
-    const Logout = () => {
-        setUser(false)
-        Navigate(routes.login)
-    }
+export const PopUser = () => {
+    const {logout} = useContext(userContext)
 
     return (
         <div className="pop-exit" id="popExit">
@@ -18,7 +15,7 @@ export const PopUser = ({setUser}) => {
                 </div>
                 <form className="pop-exit__form" id="formExit" action="#">
                     <div className="pop-exit__form-group">
-                        <button className="pop-exit__exit-yes _hover01" id="exitYes" onClick={Logout}>Да, выйти</button>
+                        <button className="pop-exit__exit-yes _hover01" id="exitYes" onClick={logout}>Да, выйти</button>
                         <button className="pop-exit__exit-no _hover03" id="exitNo"><Link to={routes.main}>Нет, остаться</Link> </button>
                     </div>
                 </form>
