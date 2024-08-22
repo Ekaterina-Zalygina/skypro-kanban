@@ -52,6 +52,11 @@ export const PopNewCard = () => {
 		newTask({token: user.token, taskData: addValue})
 	}
 
+	const CategoriesInput = (e) => {
+		const {value, name} = e.target
+		setAddValue({...addValue, [name]: value})
+	}
+
 
     return (
         <S.NewCard id="popNewCard">
@@ -151,13 +156,20 @@ export const PopNewCard = () => {
             <div className="pop-new-card__categories categories">
                 <S.CategoriesP>Категория</S.CategoriesP>
                 <S.CategoriesThemes>
-                    <S.CategoriesActive $isActive={addValue.topic === "Web Design"} $colorTheme={"_orange"}>
-                        <S.CategigoriesName>Web Design</S.CategigoriesName> 
-                    </S.CategoriesActive>
-                    <S.CategoriesTheme $isActive={addValue.topic === "Research"} $colorTheme={"_green"}>
+                    <S.CategoriesActive
+					    type="radio"
+						id="radio1"
+						name="topic"
+						value="Web Design"
+						CategoriesInput={CategoriesInput}
+						checked={addValue.topic === 'Web Design'}
+					/>
+                        <S.RadioCategories1 htmlFor="radio1">Web Design</S.RadioCategories1>
+
+                    <S.CategoriesTheme>
                         <S.CategigoriesName>Research</S.CategigoriesName>
                     </S.CategoriesTheme>
-                    <S.CategoriesTheme $isActive={addValue.topic === "Copywriting"} $colorTheme={"_purple"}>
+                    <S.CategoriesTheme>
                         <S.CategigoriesName>Copywriting</S.CategigoriesName>
                     </S.CategoriesTheme>
                 </S.CategoriesThemes>

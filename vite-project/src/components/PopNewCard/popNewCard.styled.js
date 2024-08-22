@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Hover01 } from "../../globalStyle.styled";
-import { CategoriesColor } from "../../CategoriesColor";
 
 export const NewCard = styled.div`
   width: 100%;
@@ -290,17 +289,18 @@ export const CategoriesTheme = styled.div`
   }
 `
 
-export const CategoriesActive = styled.div`
+export const RadioCategories1 = styled.div`
   display: inline-block;
   width: auto;
   height: 30px;
   padding: 8px 20px;
   border-radius: 24px;
   margin-right: 7px;
-  opacity: ${({$isActive}) => $isActive ? '1' : '0.5'};
+  opacity: 50%;
 
-  color: ${({$themeColor}) => CategoriesColor[$themeColor]?.color || "#ffffff"};
-  background-color: ${({$themeColor}) => CategoriesColor[$themeColor]?.backgroundColor || "#94a6be"};
+  &:hover {
+    opacity: 100%;
+  }
 
   /* p {
     font-size: 14px;
