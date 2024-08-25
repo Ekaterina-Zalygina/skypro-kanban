@@ -2,8 +2,10 @@ import { DayPicker } from "react-day-picker";
 import styled from "styled-components";
 
 export const CalendarContent = styled.div`
+    width: 168px;
+    height: 172px;
     margin-bottom: 12px;
-    margin-left: 30px;
+    margin-left: 20px;
 `
 
 export const CalendarTtl = styled.p`
@@ -17,26 +19,20 @@ export const CalendarTtl = styled.p`
 `;
 
 export const StyledDayPicker = styled(DayPicker)`
-    --rdp-accent-color: #94A6BE;
+    /* --rdp-accent-color: #94A6BE; */
    width: 100%;
-  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   margin-top: 14px;
   margin: 0 0px;
-  /* padding: 0 10px; */
-  /* width: 168px;
-  height: 172px; */
-
   background-color: #ffffff;
   color: #94A6BE;
 
-  .rdp {
+ .rdp {
     margin: 0em;
   }
 .rdp-table {
   width: 168px;
-
 }
   .rdp-caption_label {
 
@@ -70,6 +66,22 @@ export const StyledDayPicker = styled(DayPicker)`
   .rdp-day_selected {
     background-color: #94A6BE;
   }
+
+  .rdp-weekday {
+    text-align: -webkit-left;
+  }
+
+  .rdp-root button {
+    width: 30px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    /* font: inherit; */
+    color: inherit;
+  }
+
   .rdp-nav_icon {
     Width: 14px;
     Height: 6px;
@@ -79,7 +91,7 @@ export const StyledDayPicker = styled(DayPicker)`
     width: 100%;
     height: 22px;
     font-size: 10px;
-  }
+  } 
 `
 
 export const CalendarContentP = styled.div`

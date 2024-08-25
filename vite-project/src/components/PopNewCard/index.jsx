@@ -1,11 +1,10 @@
 import { useContext, useState } from "react"
-// import { routes } from "../../router/routes"
-// import { Link } from "react-router-dom"
 import * as S from "./popNewCard.styled.js"
 import { userContext } from "../../context/userContext.jsx"
 import { newTask } from "../../API/tasks.js"
 import { MyDatePicker } from "../Calendar/CalendarPicker.jsx"
-// import { Green, Orange, Purple } from "../../globalStyle.styled.js"
+import { routes } from "../../router/routes.js"
+import { Link } from "react-router-dom"
 
 export const PopNewCard = () => {
 
@@ -60,11 +59,11 @@ export const PopNewCard = () => {
 
     return (
         <S.NewCard id="popNewCard">
-<S.NewCardContainer>
-    <S.NewCardBlock>
+        <S.NewCardContainer>
+        <S.NewCardBlock>
         <S.NewCardContent>
             <S.NewCardTtl>Создание задачи</S.NewCardTtl>
-            <S.NewCardClose>&#10006;</S.NewCardClose>
+            <S.NewCardClose><Link to={routes.main}>&#10006;</Link></S.NewCardClose>
             <S.NewCardWrap>
                 <S.NewCardForm id="formNewCard" action="#" onSubmit={createTask}>
                     <S.FormNewBlock>
@@ -157,24 +156,38 @@ export const PopNewCard = () => {
                 <S.CategoriesP>Категория</S.CategoriesP>
                 <S.CategoriesThemes>
                     <S.CategoriesActive
-					    type="radio"
-						id="radio1"
-						name="topic"
-						value="Web Design"
-						CategoriesInput={CategoriesInput}
-						checked={addValue.topic === 'Web Design'}
+					type="radio"
+					id="radio1"
+					name="topic"
+					value="Web Design"
+					CategoriesInput={CategoriesInput}
+					checked={addValue.topic === 'Web Design'}
 					/>
-                        <S.RadioCategories1 htmlFor="radio1">Web Design</S.RadioCategories1>
+                    <S.RadioCategories1 htmlFor="radio1">Web Design</S.RadioCategories1>
 
-                    <S.CategoriesTheme>
-                        <S.CategigoriesName>Research</S.CategigoriesName>
-                    </S.CategoriesTheme>
-                    <S.CategoriesTheme>
-                        <S.CategigoriesName>Copywriting</S.CategigoriesName>
-                    </S.CategoriesTheme>
+					<S.CategoriesActive
+					type="radio"
+					id="radio2"
+					name="topic"
+					value="Research"
+					CategoriesInput={CategoriesInput}
+					checked={addValue.topic === 'Research'}
+					/>
+                    <S.RadioCategories2 htmlFor="radio2">Research</S.RadioCategories2>  
+
+                    <S.CategoriesActive
+					type="radio"
+					id="radio3"
+					name="topic"
+					value="Research"
+					CategoriesInput={CategoriesInput}
+					checked={addValue.topic === 'Copywriting'}
+					/>
+                    <S.RadioCategories3 htmlFor="radio3">Copywriting</S.RadioCategories3>  
+
                 </S.CategoriesThemes>
             </div>
-            <S.FormNewCreate id="btnCreate" type="submit">Создать задачу</S.FormNewCreate>
+            <S.FormNewCreate id="btnCreate" type="submit" onClick={createTask}>Создать задачу</S.FormNewCreate>
         </S.NewCardContent>
     </S.NewCardBlock>
 </S.NewCardContainer>

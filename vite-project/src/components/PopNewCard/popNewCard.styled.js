@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Hover01 } from "../../globalStyle.styled";
+import { Hover01 } from "../../globalStyle.styled.js";
 
 export const NewCard = styled.div`
   width: 100%;
@@ -148,10 +148,6 @@ export const FormNewArea = styled.textarea`
 }
 `
 
-// export const NewCardCalendar = styled.div`
-//     width: 100%;
-// `
-
 export const CalendarTtl = styled.p`
   margin-bottom: 14px;
   padding: 0 7px;
@@ -272,50 +268,73 @@ export const CategoriesThemes = styled.div`
   justify-content: flex-start;
 `
 
-export const CategoriesTheme = styled.div`
-  display: inline-block;
-  width: auto;
-  height: 30px;
-  padding: 8px 20px;
-  border-radius: 24px;
-  margin-right: 7px;
-  opacity: 0.4;
+// export const CategoriesTheme = styled.div`
+//   display: inline-block;
+//   width: auto;
+//   height: 30px;
+//   padding: 8px 20px;
+//   border-radius: 24px;
+//   margin-right: 7px;
+//   opacity: 0.4;
 
-  p {
-    font-size: 14px;
-  font-weight: 600;
-  line-height: 14px;
-  white-space: nowrap;
-  }
+//   p {
+//     font-size: 14px;
+//   font-weight: 600;
+//   line-height: 14px;
+//   white-space: nowrap;
+//   }
+// `
+
+export const CategoriesActive = styled.input`
+  display: none;
+
+ &:checked + label {
+  opacity: 100%;
+}
 `
 
 export const RadioCategories1 = styled.div`
   display: inline-block;
-  width: auto;
-  height: 30px;
-  padding: 8px 20px;
+  padding: 8px 20px 8px 20px;
   border-radius: 24px;
+  color: #ff6d00;
+  background: #ffe4c2;
+  cursor: pointer;
+  margin-right: 7px;
+  opacity: 40%;
+
+  &:hover {
+    opacity: 100%;
+  }
+`
+
+export const RadioCategories2 = styled.label`
+  display: inline-block;
+  padding: 8px 20px 8px 20px;
+  border-radius: 24px;
+  color: #06b16e;
+  background: #b4fdd1;
+  cursor: pointer;
+  margin-right: 7px;
+  opacity: 40%;
+
+  &:hover {
+    opacity: 100%;
+  }
+`
+export const RadioCategories3 = styled.label`
+  display: inline-block;
+  padding: 8px 20px 8px 20px;
+  border-radius: 24px;
+  color: #9a48f1;
+  background: #E9D4FF;
+  cursor: pointer;
   margin-right: 7px;
   opacity: 50%;
 
   &:hover {
     opacity: 100%;
   }
-
-  /* p {
-    font-size: 14px;
-  font-weight: 600;
-  line-height: 14px;
-  white-space: nowrap;
-  } */
-
-  /* &_active-category {
-  opacity: 1 !important;
-  } */
-
-  /* opacity: ${({$isActive}) => $isActive ? '1' : '0.5'}; */
-
-
 `
 
 export const CategigoriesName = styled.p`
