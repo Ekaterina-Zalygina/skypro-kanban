@@ -1,5 +1,5 @@
-import { DayPicker } from "react-day-picker";
-import styled from "styled-components";
+import { DayPicker } from "react-day-picker"
+import styled from "styled-components"
 
 export const CalendarContent = styled.div`
     width: 168px;
@@ -9,93 +9,106 @@ export const CalendarContent = styled.div`
 `
 
 export const CalendarTtl = styled.p`
-  // margin-bottom: 14px;
-  padding: 0 7px;
+    // margin-bottom: 14px;
 
-  color: ${({theme})=> theme.text};
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-`;
+    color: ${({ theme }) => theme.text};
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+`
 
 export const StyledDayPicker = styled(DayPicker)`
-    /* --rdp-accent-color: #94A6BE; */
-   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
-  margin: 0 0px;
-  background-color: #ffffff;
-  color: #94A6BE;
+    --rdp-accent-color: #94a6be;
+    --rdp-day_button-width: 12px;
+    --rdp-day_button-height: 12px;
 
- .rdp {
-    margin: 0em;
-  }
-.rdp-table {
-  width: 168px;
-}
-  .rdp-caption_label {
+    --rdp-day-width: 24px;
+    --rdp-day-height: 24px;
 
-    color: #94A6BE;
-    font-size: 14px;
-    line-height: 25px;
-    font-weight: 600;
-  }
-  .rdp-head_cell {
-    font-size: 10px;
-  }
-  .rdp-cell{
-    width: 22px;
-    height: 22px;
-    margin: 4px;
-    border-radius: 30%;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    color: #94A6BE;
-    font-size: 10px;
-    line-height: 1;
-    letter-spacing: -0.2px;
-    cursor: pointer;
-  }
-  .rdp-button_reset.rdp-button.rdp-day {
-    width: 22px;
-    height: 22px;
-    font-size: 10px;   
-  }
-  .rdp-day_selected {
-    background-color: #94A6BE;
-  }
-
-  .rdp-weekday {
-    text-align: -webkit-left;
-  }
-
-  .rdp-root button {
-    width: 30px;
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    /* font: inherit; */
-    color: inherit;
-  }
-
-  .rdp-nav_icon {
-    Width: 14px;
-    Height: 6px;
-  }
-  p {
-    margin-top: 14px;
     width: 100%;
-    height: 22px;
-    font-size: 10px;
-  } 
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    margin: 0 0px;
+    /* padding: 0 10px; */
+    /* width: 168px;
+  height: 172px; */
+
+    background-color: #ffffff;
+    color: var(--rdp-accent-color);
+
+    .rdp {
+        margin: 0em;
+    }
+
+    .rdp-month_caption {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: var(--rdp-accent-color);
+    }
+
+    .rdp-table {
+        width: 168px;
+    }
+    .rdp-caption_label {
+        color: var(--rdp-accent-color);
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 600;
+    }
+    .rdp-day {
+    }
+    .rdp-day_button {
+        font-size: 10px;
+        padding: 10px;
+    }
+    .rdp-head_cell {
+        font-size: 10px;
+    }
+    .rdp-cell {
+        width: 22px;
+        height: 22px;
+        margin: 4px;
+        border-radius: 30%;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        color: var(--rdp-accent-color);
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+    }
+    .rdp-button_reset.rdp-button.rdp-day {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+    .rdp-day_selected {
+        background-color: var(--rdp-accent-color);
+    }
+    .rdp-nav_icon {
+        width: 14px;
+        height: 6px;
+    }
+    p {
+        margin-top: 14px;
+        width: 100%;
+        height: 22px;
+        font-size: 10px;
+    }
 `
 
 export const CalendarContentP = styled.div`
-    margin-left: 20px;
+    margin-top: 14px;
+    font-size: 10px;
+
+    & span {
+        color: #000;
+    }
 `
 
 // export const CalendarDaysNames = styled.div`

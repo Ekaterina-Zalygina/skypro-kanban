@@ -8,11 +8,11 @@ import { Outlet } from "react-router-dom"
 import { getTasks } from "../../API/tasks"
 import { userContext } from "../../context/userContext"
 import { TaskContext } from "../../context/taskContext"
+import { PopNewCard } from "../../components/PopNewCard"
 
-export const MainPage = ({intoTheme, setIntoTheme}) => {
-
-  const {user} = useContext(userContext) //на будущее - лучше писать с большой буквы UserContext
-    const {tasks, setTasks} = useContext(TaskContext)
+export const MainPage = ({ intoTheme, setIntoTheme }) => {
+    const { user } = useContext(userContext) //на будущее - лучше писать с большой буквы UserContext
+    const { tasks, setTasks } = useContext(TaskContext)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState()
 
@@ -25,31 +25,29 @@ export const MainPage = ({intoTheme, setIntoTheme}) => {
     //       date: "30.10.2023",
     //       status: "Без статуса"
     //     }
-  
-    //     setTasks([...tasks, newCard]) 
+
+    //     setTasks([...tasks, newCard])
     //   }
-  
-      useEffect(() => {
-        getTasks(user.token).then ((res) => {
-          setTasks(res.tasks)
-        })
-        .catch((error) => {
-          console.log(error.message)
-          setError(error.message)
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-      }, [])
+
+    useEffect(() => {
+        getTasks(user.token)
+            .then((res) => {
+                setTasks(res.tasks)
+            })
+            .catch((error) => {
+                console.log(error.message)
+                setError(error.message)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }, [])
 
     return (
         <Wrapper>
-          <Outlet/>
-          <popNewCard/>
-          {/* <PopBrowse /> */}
-          {/* <PopUser />  */}
-      <Header setIntoTheme={setIntoTheme} intoTheme={intoTheme}/>
-      {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={tasks} />}
-    </Wrapper>
+            <Outlet />
+            <Header setIntoTheme={setIntoTheme} intoTheme={intoTheme} />
+            {isLoading ? <img src={loader} alt="" /> : error ? <p>{error}</p> : <Main cards={tasks} />}
+        </Wrapper>
     )
 }
