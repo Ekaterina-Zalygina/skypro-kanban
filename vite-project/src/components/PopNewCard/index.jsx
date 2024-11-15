@@ -201,10 +201,12 @@ import { newTask } from "../../API/tasks.js";
 import { MyDatePicker } from "../Calendar/CalendarPicker.jsx";
 import { routes } from "../../router/routes.js";
 import { Link, useNavigate } from "react-router-dom";
+import { TaskContext } from "../../context/taskContext.jsx";
 
 export const PopNewCard = () => {
   const [error, setError] = useState(null);
   const { user } = useContext(userContext);
+  const { setTasks } = useContext(TaskContext);
   const navigate = useNavigate();
 
   const [addValue, setAddValue] = useState({
@@ -215,7 +217,7 @@ export const PopNewCard = () => {
     status: "Без статуса",
   });
 
-  const createTask = (e) => {
+  const createTask = async (e) => {
     e.preventDefault();
 
     if (!addValue.text) {
@@ -244,7 +246,13 @@ export const PopNewCard = () => {
     }
 
     navigate(routes.main);
-    newTask({ token: user.token, taskData: addValue });
+
+    try {
+      const tasks = await newTask({ token: user.token, taskData: addValue });
+      setTasks(tasks.tasks);
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const handleCategoryChange = (e) => {

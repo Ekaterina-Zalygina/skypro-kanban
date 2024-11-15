@@ -17,21 +17,16 @@ export const getTasks = async (token) => {
 
 //добавление задачи
 export const newTask = async ({ token, taskData }) => {
-  try {
-    const response = await fetch(apiURL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(taskData),
-    });
-    if (!response.ok) {
-      //Успешно ли выполнится запрос или нет (отрицание, ответ где находится переменная, которую хотим проверить)
-      throw new Error("Задача не добавлена, попробуйте еще раз");
-    }
-    return response.json();
-  } catch (error) {
-    console.error("Ошибка при добавлении задачи:", error.message);
-    throw error;
+  const response = await fetch(apiURL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(taskData),
+  });
+  if (!response.ok) {
+    //Успешно ли выполнится запрос или нет (отрицание, ответ где находится переменная, которую хотим проверить)
+    throw new Error("Задача не добавлена, попробуйте еще раз");
   }
+  return response.json();
 };
