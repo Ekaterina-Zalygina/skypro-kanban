@@ -1,115 +1,115 @@
-import { DayPicker } from "react-day-picker"
-import styled from "styled-components"
+import { DayPicker } from "react-day-picker";
+import styled from "styled-components";
 
 export const CalendarContent = styled.div`
-    width: 168px;
-    height: 172px;
-    margin-bottom: 12px;
-    margin-left: 20px;
-`
+  width: 168px;
+  height: 172px;
+  margin-bottom: 12px;
+  margin-left: 20px;
+`;
 
 export const CalendarTtl = styled.p`
-    // margin-bottom: 14px;
+  // margin-bottom: 14px;
 
-    color: ${({ theme }) => theme.text};
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-`
+  color: ${({ theme }) => theme.calendarText};
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+`;
 
 export const StyledDayPicker = styled(DayPicker)`
-    --rdp-accent-color: #94a6be;
-    --rdp-day_button-width: 12px;
-    --rdp-day_button-height: 12px;
+  --rdp-accent-color: #94a6be;
+  --rdp-day_button-width: 12px;
+  --rdp-day_button-height: 12px;
 
-    --rdp-day-width: 24px;
-    --rdp-day-height: 24px;
+  --rdp-day-width: 24px;
+  --rdp-day-height: 24px;
 
-    width: 100%;
-    /* display: flex; */
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 14px;
-    margin: 0 0px;
-    /* padding: 0 10px; */
-    /* width: 168px;
+  width: 100%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  margin: 0 0px;
+  /* padding: 0 10px; */
+  /* width: 168px;
   height: 172px; */
 
-    background-color: #ffffff;
+  background-color: ${({ theme }) => theme.calendarColor};
+  color: var(--rdp-accent-color);
+
+  .rdp {
+    margin: 0em;
+  }
+
+  .rdp-month_caption {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+
     color: var(--rdp-accent-color);
+  }
 
-    .rdp {
-        margin: 0em;
-    }
-
-    .rdp-month_caption {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 16px;
-
-        color: var(--rdp-accent-color);
-    }
-
-    .rdp-table {
-        width: 168px;
-    }
-    .rdp-caption_label {
-        color: var(--rdp-accent-color);
-        font-size: 14px;
-        line-height: 25px;
-        font-weight: 600;
-    }
-    .rdp-day {
-    }
-    .rdp-day_button {
-        font-size: 10px;
-        padding: 10px;
-    }
-    .rdp-head_cell {
-        font-size: 10px;
-    }
-    .rdp-cell {
-        width: 22px;
-        height: 22px;
-        margin: 4px;
-        border-radius: 30%;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        color: var(--rdp-accent-color);
-        font-size: 10px;
-        line-height: 1;
-        letter-spacing: -0.2px;
-        cursor: pointer;
-    }
-    .rdp-button_reset.rdp-button.rdp-day {
-        width: 22px;
-        height: 22px;
-        font-size: 10px;
-    }
-    .rdp-day_selected {
-        background-color: var(--rdp-accent-color);
-    }
-    .rdp-nav_icon {
-        width: 14px;
-        height: 6px;
-    }
-    p {
-        margin-top: 14px;
-        width: 100%;
-        height: 22px;
-        font-size: 10px;
-    }
-`
+  .rdp-table {
+    width: 168px;
+  }
+  .rdp-caption_label {
+    color: var(--rdp-accent-color);
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+  .rdp-day {
+  }
+  .rdp-day_button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .rdp-head_cell {
+    font-size: 10px;
+  }
+  .rdp-cell {
+    width: 22px;
+    height: 22px;
+    margin: 4px;
+    border-radius: 30%;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    color: var(--rdp-accent-color);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+  }
+  .rdp-button_reset.rdp-button.rdp-day {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .rdp-day_selected {
+    background-color: var(--rdp-accent-color);
+  }
+  .rdp-nav_icon {
+    width: 14px;
+    height: 6px;
+  }
+  p {
+    margin-top: 14px;
+    width: 100%;
+    height: 22px;
+    font-size: 10px;
+  }
+`;
 
 export const CalendarContentP = styled.div`
-    margin-top: 14px;
-    font-size: 10px;
+  margin-top: 14px;
+  font-size: 10px;
 
-    & span {
-        color: #000;
-    }
-`
+  & span {
+    color: #000;
+  }
+`;
 
 // export const CalendarDaysNames = styled.div`
 //   display: flex;
