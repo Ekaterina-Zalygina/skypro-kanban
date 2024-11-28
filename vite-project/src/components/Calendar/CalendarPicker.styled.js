@@ -111,8 +111,7 @@ export const StyledDayPicker = styled(DayPicker)`
 export const CalendarContentP = styled.div`
   margin-top: 14px;
   font-size: 10px;
-
-  & span {
+  color: ${({ theme }) => theme.deleteText} & span {
     color: #000;
   }
 `;
