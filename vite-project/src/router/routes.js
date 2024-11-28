@@ -1,10 +1,10 @@
 export const routes = {
-  main: "/",
-  login: "/login",
-  register: "/register",
-  notFound: "*",
-  exit: "/exit",
-  card: "/card/:id",
-  add: "/add",
-  redaction: "/redaction",
-};
+    main: "/",
+    login: "/login",
+    register: "/register",
+    notFound: "*",
+    exit: "/exit",
+    card: "/card/:id",
+    add: "/add",
+    redaction: "/redaction/:id",
+}

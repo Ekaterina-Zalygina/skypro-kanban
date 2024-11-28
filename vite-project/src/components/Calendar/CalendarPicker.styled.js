@@ -42,6 +42,12 @@ export const StyledDayPicker = styled(DayPicker)`
     margin: 0em;
   }
 
+  .dp-chevron {
+    display: inline-block;
+    height: 10px;
+    fill: var(--rdp-accent-color);
+  }
+
   .rdp-month_caption {
     font-weight: 600;
     font-size: 14px;

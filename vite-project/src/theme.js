@@ -31,6 +31,12 @@ export const light = {
   radioCategories2Text: "#06B16E",
   radioCategories3: "#E9D4FF",
   radioCategories3Text: "#9A48F1",
+  containerPopBrowse: "#FFFFFF",
+  popBrowseArea: "#EAEEF6",
+  deleteText: "#565EEF",
+  cancelText: "#565EEF",
+  deleteBorder: "#565EEF",
+  colorArea: "#94A6BE",
 };
 
 export const dark = {
@@ -67,4 +73,10 @@ export const dark = {
   radioCategories2Text: "#B4FDD1",
   radioCategories3: "#9A48F1",
   radioCategories3Text: "#E9D4FF",
+  containerPopBrowse: "#20202C",
+  popBrowseArea: "#151419",
+  deleteText: "#FFFFFF",
+  cancelText: "#FFFFFF",
+  deleteBorder: "#FFFFFF",
+  colorArea: "#94A6BE",
 };

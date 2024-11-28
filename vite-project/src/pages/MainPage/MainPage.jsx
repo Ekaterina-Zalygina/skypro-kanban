@@ -8,7 +8,6 @@ import { Outlet } from "react-router-dom"
 import { getTasks } from "../../API/tasks"
 import { userContext } from "../../context/userContext"
 import { TaskContext } from "../../context/taskContext"
-import { PopNewCard } from "../../components/PopNewCard"
 
 export const MainPage = ({ intoTheme, setIntoTheme }) => {
     const { user } = useContext(userContext) //на будущее - лучше писать с большой буквы UserContext
