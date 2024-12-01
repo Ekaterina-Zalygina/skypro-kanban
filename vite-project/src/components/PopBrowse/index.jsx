@@ -82,24 +82,6 @@ export const TaskView = () => {
                 <Link to={routes.main}>Закрыть</Link>
               </S.ButtonBorClose>
             </S.PopBrowseBtn>
-            {/* <div className="pop-browse__btn-edit _hide">
-              <div className="btn-group">
-                <button className="btn-edit__edit _btn-bg _hover01">
-                  <a href="#">Сохранить</a>
-                </button>
-                <button className="btn-edit__edit _btn-bor _hover03 _hide">
-                  <a href="#">Отменить</a>
-                </button>
-                <button
-                  className="btn-edit__delete _btn-bor _hover03 "
-                  id="btnDelete">
-                  <a href="#">Удалить задачу</a>
-                </button>
-              </div>
-              <button className="btn-edit__close _btn-bg _hover01 _hide">
-                <a href="#">Закрыть</a>
-              </button>
-            </div> */}
           </S.popBrowseContent>
         </S.popBrowseBlock>
       </S.popBrowseContainer>
