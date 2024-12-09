@@ -5,17 +5,21 @@ import { routes } from "../router/routes";
 export const userContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const Navigation = useNavigate();
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
+  const navigate = useNavigate();
 
   function login(data) {
     setUser(data);
-    Navigation(routes.main);
+    navigate(routes.main);
   }
 
   function logout() {
     setUser(null);
-    Navigation(routes.login);
+    navigate(routes.login);
   }
 
   useEffect(() => {
@@ -27,7 +31,7 @@ export const UserProvider = ({ children }) => {
   }, [user]);
 
   return (
-    <userContext.Provider value={{ logout, login, user }}>
+    <userContext.Provider value={{ user, login, logout }}>
       {children}
     </userContext.Provider>
   );
