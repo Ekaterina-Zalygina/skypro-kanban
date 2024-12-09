@@ -46,9 +46,6 @@ export const Card = ({ topic, title, date, id }) => {
                   strokeLinejoin="round"
                 />
               </g>
-              <defs>
-                <S.clipPath id="clip0_1_415"></S.clipPath>
-              </defs>
             </S.CardDate>
             <S.CardDateI>
               <img src="images/calendar.png" alt="" />

@@ -21,19 +21,15 @@ export const Header = ({ intoTheme, setIntoTheme }) => {
       <Container>
         <S.HeaderBlock>
           <S.HeaderLogoLight>
-            <a href="" target="_self">
-              <img src="images/logo.png" alt="logo" />
-            </a>
+            <img src="images/logo.png" alt="logo" />
           </S.HeaderLogoLight>
           <S.HeaderLogoDark>
-            <a href="" target="_self">
-              <img src="images/logo_dark.png" alt="logo" />
-            </a>
+            <img src="images/logo_dark.png" alt="logo" />
           </S.HeaderLogoDark>
           <S.HeaderNav>
             <Link to={routes.add}>
               <S.HeaderBtnMain id="btnMainNew">
-                <a>Создать новую задачу</a>
+                Создать новую задачу
               </S.HeaderBtnMain>
             </Link>
             <S.HeaderUserHover02 onClick={toggleOpenUser}>
