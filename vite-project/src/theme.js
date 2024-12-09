@@ -17,7 +17,6 @@ export const light = {
   modalEye: "#FFFFFF",
   modalName: "#000000",
   modalTheme: "#000000",
-  // hover03: "background-color: #33399b; color: #FFFFFF; a {color: #FFFFFF;}",
   hover03Text: "#565EEF",
   hover03Border: "#565EEF",
   newCardBody: "#FFFFFF",
@@ -37,6 +36,10 @@ export const light = {
   cancelText: "#565EEF",
   deleteBorder: "#565EEF",
   colorArea: "#94A6BE",
+  backgroundCancel: "#FFFFFF",
+  popExitBlock: "#FFFFFF",
+  popExitTtl: "#000000",
+  popExitNo: "#565EEF",
 };
 
 export const dark = {
@@ -58,7 +61,6 @@ export const dark = {
   modalEye: "#202229",
   modalName: "#FFFFFF",
   modalTheme: "#FFFFFF",
-  // hover03: "background-color: #565EEF; color: #FFFFFF; border-color: #FFFFFF; a {color: #FFFFFF;}"
   hover03Text: "#FFFFFF",
   hover03Border: "#FFFFFF",
   newCardBody: "#20202C",
@@ -79,4 +81,8 @@ export const dark = {
   cancelText: "#FFFFFF",
   deleteBorder: "#FFFFFF",
   colorArea: "#94A6BE",
+  backgroundCancel: "#4E5566",
+  popExitBlock: "#20202C",
+  popExitTtl: "#FFFFFF",
+  popExitNo: "#FFFFFF",
 };

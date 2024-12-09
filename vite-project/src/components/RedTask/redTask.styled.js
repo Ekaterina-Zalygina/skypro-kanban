@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { topicStyles } from "../../themeStyles";
 
 export const popBrowse = styled.div`
-  /* display: none; */
   width: 100%;
   height: 100%;
   min-width: 375px;
@@ -51,7 +50,6 @@ export const popBrowseTopBlock = styled.div`
 `;
 
 export const popBrowseTtl = styled.input`
-  /* color: #000; */
   border: none;
   background: transparent;
   font-size: 20px;
@@ -101,7 +99,6 @@ export const StatusTheme = styled.div`
   border-radius: 24px;
   border: 0.7px solid rgba(148, 166, 190, 0.4);
   max-width: 136px;
-  /* max-height: 30px; */
   text-align: center;
   padding: 11px 14px 10px;
   margin-right: 7px;
@@ -152,10 +149,6 @@ export const PopBrowseArea = styled.textarea`
   height: 200px;
   background-color: ${({ theme }) => theme.popBrowseArea};
   color: ${({ theme }) => theme.colorArea};
-
-  /* &:read-only {
-    background: ${({ theme }) => theme.popBrowseArea};
-  } */
 
   &::-moz-placeholder {
     font-weight: 400;
@@ -229,12 +222,16 @@ export const ButtonBorCancel = styled.button`
   border: 0.7px solid
     var(--palette-navy-60, ${({ theme }) => theme.deleteBorder});
   outline: none;
-  background: transparent;
-  color: ${({ theme }) => theme.cancelText};
+  background-color: transparent;
+  a {
+    color: ${({ theme }) => theme.deleteText};
+  }
 
   &:hover {
     background-color: #565eef;
-    color: #ffffff;
+    a {
+      color: #ffffff;
+    }
   }
 `;
 
@@ -242,14 +239,12 @@ export const ButtonBorSave = styled.button`
   border-radius: 4px;
   border: 0.7px solid var(--palette-navy-60, #565eef);
   outline: none;
-  background-color: #565eef;
   color: #ffffff;
+  background-color: #565eef;
 
   &:hover {
     background-color: #ffffff;
-    a {
-      color: #565eef;
-    }
+    color: #565eef;
   }
 `;
 

@@ -43,7 +43,7 @@ export const TaskEdit = () => {
                 <S.CategoriesThemeTopic>{task.topic}</S.CategoriesThemeTopic>
               </S.CategoriesTheme>
             </S.popBrowseTopBlock>
-            <div className="pop-browse__status status">
+            <S.Status>
               <S.StatusTitileBrowse>Статус</S.StatusTitileBrowse>
               <S.StatusThemeEdit>
                 <Status
@@ -72,7 +72,7 @@ export const TaskEdit = () => {
                   onClick={() => setTask({ ...task, status: "Готово" })}
                 />
               </S.StatusThemeEdit>
-            </div>
+            </S.Status>
             <S.PopBrowseWrap>
               <S.PopBrowseForm id="formBrowseCard" action="#">
                 <S.FormBrowseBlock>

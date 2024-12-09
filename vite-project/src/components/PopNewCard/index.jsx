@@ -111,7 +111,7 @@ export const PopNewCard = () => {
                 setSelected={(date) => setAddValue({ ...addValue, date })}
               />
             </S.NewCardWrap>
-            <div className="pop-new-card__categories categories">
+            <S.Categories>
               <S.CategoriesP>Категория</S.CategoriesP>
               <S.CategoriesThemes>
                 <S.CategoriesActive
@@ -124,7 +124,7 @@ export const PopNewCard = () => {
                 />
                 <S.RadioCategories1
                   htmlFor="radio1"
-                  className={addValue.topic === "Web Design" ? "active" : ""}>
+                  checked={addValue.topic === "Web Design" ? "active" : ""}>
                   Web Design
                 </S.RadioCategories1>
 
@@ -138,7 +138,7 @@ export const PopNewCard = () => {
                 />
                 <S.RadioCategories2
                   htmlFor="radio2"
-                  className={addValue.topic === "Research" ? "active" : ""}>
+                  checked={addValue.topic === "Research" ? "active" : ""}>
                   Research
                 </S.RadioCategories2>
 
@@ -152,11 +152,11 @@ export const PopNewCard = () => {
                 />
                 <S.RadioCategories3
                   htmlFor="radio3"
-                  className={addValue.topic === "Copywriting" ? "active" : ""}>
+                  checked={addValue.topic === "Copywriting" ? "active" : ""}>
                   Copywriting
                 </S.RadioCategories3>
               </S.CategoriesThemes>
-            </div>
+            </S.Categories>
             {error && <p style={{ color: "red" }}>{error}</p>}
             <S.FormNewCreate id="btnCreate" type="submit" onClick={createTask}>
               Создать задачу

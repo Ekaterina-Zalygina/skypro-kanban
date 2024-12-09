@@ -218,3 +218,7 @@ export const FormNewCreate = styled.button`
 
   ${Hover01}
 `;
+
+export const Categories = styled.div`
+  margin-bottom: 20px;
+`;

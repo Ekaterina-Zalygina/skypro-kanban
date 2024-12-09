@@ -3,15 +3,6 @@ import * as S from "./cards.styled.js";
 import { format } from "date-fns";
 
 export const Card = ({ topic, title, date, id }) => {
-  // const colorList = {
-  //     "Web Design":"_orange",
-  //     "Copywriting":"_purple",
-  //     "Research":"_green"
-
-  // }
-
-  // const colorStyle = colorList[topic] || "_grey"
-
   return (
     <S.Cards>
       <S.CardsItem>
